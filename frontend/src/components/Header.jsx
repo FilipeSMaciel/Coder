@@ -5,14 +5,14 @@ export default function Header() {
   }
 
   return (
-    <>
+    <header className="flex justify-around items-center">
       <div>
         <img src="" alt="Logo Coder++" />
       </div>
 
-      <div>
-        <nav>
-          <ul>
+      <div className="flex gap-24">
+        <nav className="flex gap-4">
+          <ul className="flex gap-4">
             <li>Home</li>
             <li>Freelances</li>
             <li>Projetos</li>
@@ -21,6 +21,6 @@ export default function Header() {
         </nav>
         <button onClick={login}>Entrar</button>
       </div>
-    </>
+    </header>
   )
 }
