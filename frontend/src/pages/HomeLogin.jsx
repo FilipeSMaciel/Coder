@@ -1,17 +1,17 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import Hero from "../components/Hero";
+import HeroLogin from "../components/HeroLogin";
 import LastProjects from "../components/LastProjects";
 import MainProjects from "../components/MainProjects";
 import MonthCourses from "../components/MonthCourses";
 
-export default function Home() {
+export default function HomeLogin() {
 
   return (
     <>
       <Header />
       <main>
-        <Hero />
+        <HeroLogin />
         <LastProjects />
         <div>
           <MonthCourses />

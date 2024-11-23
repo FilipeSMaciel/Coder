@@ -1,4 +1,4 @@
-export default function Hero() {
+export default function HeroLogin() {
     return (
         <section>
             <div>
