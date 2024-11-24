@@ -11,10 +11,12 @@ export default {
         'verde_botao': '#298C00',
         'background': '#1E1E1E',
         'texto_header': '#B3B3B3',
+        'bg_botao-login': '#2C2C2C',
+        'verde_principal': '#41FF00',
       },
     },
     dropShadow: {
-      'botao': 'px 4px 4px rgba(0, 0, 0, 1)',
+      '3xl': '1px 8px 18px rgba(0, 0, 0, 0.8)',
       
     }
   },

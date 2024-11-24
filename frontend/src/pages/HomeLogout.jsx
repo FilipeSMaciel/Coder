@@ -5,7 +5,7 @@ export default function HomeLogout() {
     return (
         <>
             <Header />
-            <main>
+            <main className="bg-background">
                 <HeroLogout />
             </main>
         </>
