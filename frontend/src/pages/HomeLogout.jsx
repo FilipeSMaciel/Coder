@@ -18,11 +18,6 @@ export default function HomeLogout() {
             <Modal
                 open={open}
                 onClose={() => setOpen(false)}
-                center 
-                classNames={{
-                    overlay: "customOverlay",
-                    modal: "customModal",
-                }}
             >
                 <LoginModal />
             </Modal>

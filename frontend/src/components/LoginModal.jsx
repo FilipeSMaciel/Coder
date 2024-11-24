@@ -18,7 +18,6 @@ export default function LoginModal() {
 
           <p className='flex justify-evenly gap-2 '>
             <input type="submit" value="ENTER" />
-            <input type="reset" value="Limpar" />
           </p>
 
           <div>
@@ -38,7 +37,7 @@ export default function LoginModal() {
 
           <input type="password" placeholder="Senha" required />
 
-          <input type="email" placeholder="Email" />
+          <input type="email" placeholder="Email" required />
 
           <div>
             <img src="" alt="Logo do Google" />
