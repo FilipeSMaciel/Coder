@@ -3,10 +3,16 @@ import { Navigate } from "react-router-dom";
 
 // Componente que protege as rotas
 export default function PrivateRoute({ children }) {
-  const user = JSON.parse(localStorage.getItem("user"));
+  let user = null;
+  
+  try {
+    user = JSON.parse(localStorage.getItem("user"));
+  } catch (error) {
+    console.error("Erro ao verificar o usuário:", error);
+  }
 
-  // Redireciona para "/" se o usuário não estiver autenticado
-  return user ? children : <Navigate to="/" />;
+  // Redireciona para "/home" se o usuário estiver autenticado
+  return user ? <Navigate to="/home" /> : children;
 }
 
 // Validação de props
