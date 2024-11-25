@@ -1,52 +1,194 @@
-// import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Importando o hook useNavigate
 
 export default function LoginModal() {
-  // const { register, handleSubmit } = useForm();
+  const [isRegistering, setIsRegistering] = useState(false); // Alterna entre login e cadastro
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+    email: "", // Só será usado no cadastro
+  });
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
+
+  const API_URL = "http://localhost:3000/users"; // Endpoint da API JSON Server
+  const navigate = useNavigate(); // Inicializando o useNavigate
+
+  // Atualiza os valores dos inputs
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  // Handler para login
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    try {
+      const response = await fetch(`${API_URL}?username=${formData.username}&password=${formData.password}`);
+      const users = await response.json();
+
+      if (users.length > 0) {
+        setSuccessMessage("Login bem-sucedido! Bem-vindo.");
+        // Redireciona para a página /home após o login
+        navigate("/home");
+      } else {
+        setErrorMessage("Usuário ou senha inválidos.");
+      }
+    } catch (error) {
+      console.log(error);
+      setErrorMessage("Erro ao tentar realizar o login. Tente novamente.");
+    }
+  };
+
+  // Handler para cadastro
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    try {
+      // Verifica se o nome de usuário já existe
+      const existingUserResponse = await fetch(`${API_URL}?username=${formData.username}`);
+      const existingUsers = await existingUserResponse.json();
+
+      if (existingUsers.length > 0) {
+        setErrorMessage("Nome de usuário já cadastrado.");
+        return;
+      }
+
+      // Realiza o cadastro do usuário
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: formData.username,
+          password: formData.password,
+          email: formData.email,
+        }),
+      });
+
+      if (response.ok) {
+        setSuccessMessage("Cadastro realizado com sucesso! Agora você pode fazer login.");
+        setIsRegistering(false); // Alterna para o formulário de login
+      } else {
+        setErrorMessage("Erro ao tentar cadastrar. Tente novamente.");
+      }
+    } catch (error) {
+      console.log(error);
+      setErrorMessage("Erro ao tentar realizar o cadastro. Tente novamente.");
+    }
+  };
 
   return (
-    <>
-      <section>
-        <h1>Login</h1>
-        <h2>Ou se preferir, cadastre-se.</h2>
+    <section className="flex items-center justify-center h-screen">
+      <div className="flex w-full max-w-4xl items-center gap-8">
+        {/* Imagem abstrata */}
+        <img
+          src=""
+          alt="Imagem abstrata da tela de Login"
+          className={`w-1/2 transition-transform duration-300 ease-in-out ${
+            isRegistering ? "order-first" : "order-last"
+          }`}
+        />
 
-        <img src="" alt="Logo Coder++" />
+        {/* Formulário de Login ou Cadastro */}
+        <div className="w-1/2 flex flex-col items-center">
+          {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+          {successMessage && <p className="text-green-500">{successMessage}</p>}
 
-        <form>
-          <input type="text" placeholder="Nome de usuário" required />
+          {!isRegistering && (
+            <div className="flex flex-col items-center">
+              <h1 className="text-2xl font-bold mb-4">Login</h1>
+              <h2 className="mb-6">
+                Ou se preferir,{" "}
+                <button
+                  className="text-blue-600 underline"
+                  onClick={() => setIsRegistering(true)}
+                >
+                  cadastre-se.
+                </button>
+              </h2>
+              <form className="w-full flex flex-col items-center gap-4" onSubmit={handleLogin}>
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Nome de usuário"
+                  className="border border-gray-300 rounded-md p-2 w-full"
+                  required
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Senha"
+                  className="border border-gray-300 rounded-md p-2 w-full"
+                  required
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="submit"
+                  value="ENTER"
+                  className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 cursor-pointer"
+                />
+              </form>
+            </div>
+          )}
 
-          <input type="password" placeholder="Senha" required />
-
-          <p className='flex justify-evenly gap-2 '>
-            <input type="submit" value="ENTER" />
-          </p>
-
-          <div>
-            <img src="" alt="Logo do Google" />
-            <img src="" alt="Logo do Github" />
-            <img src="" alt="Logo do Linkedin" />
-          </div>
-        </form>
-
-        <img src="" alt="Imagem abstrata da tela de Login" />
-
-        <h1>Cadastro</h1>
-        <h2>Ou se preferir, faça login.</h2>
-
-        <form>
-          <input type="text" placeholder="Nome de usuário" required />
-
-          <input type="password" placeholder="Senha" required />
-
-          <input type="email" placeholder="Email" required />
-
-          <div>
-            <img src="" alt="Logo do Google" />
-            <img src="" alt="Logo do Github" />
-            <img src="" alt="Logo do Linkedin" />
-            <input type="submit" value="ENTER" />
-          </div>
-        </form>
-      </section>
-    </>
-  )
+          {isRegistering && (
+            <div className="flex flex-col items-center">
+              <h1 className="text-2xl font-bold mb-4">Cadastro</h1>
+              <h2 className="mb-6">
+                Ou se preferir,{" "}
+                <button
+                  className="text-blue-600 underline"
+                  onClick={() => setIsRegistering(false)}
+                >
+                  faça login.
+                </button>
+              </h2>
+              <form className="w-full flex flex-col items-center gap-4" onSubmit={handleRegister}>
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Nome de usuário"
+                  className="border border-gray-300 rounded-md p-2 w-full"
+                  required
+                  value={formData.username}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="password"
+                  name="password"
+                  placeholder="Senha"
+                  className="border border-gray-300 rounded-md p-2 w-full"
+                  required
+                  value={formData.password}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="border border-gray-300 rounded-md p-2 w-full"
+                  required
+                  value={formData.email}
+                  onChange={handleInputChange}
+                />
+                <input
+                  type="submit"
+                  value="REGISTER"
+                  className="bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-600 cursor-pointer"
+                />
+              </form>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  );
 }
