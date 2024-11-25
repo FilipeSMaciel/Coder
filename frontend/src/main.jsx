@@ -1,20 +1,25 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './index.css'
-import HomeLogout from './pages/HomeLogout'
-import HomeLogin from './pages/HomeLogin'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./index.css";
+import HomeLogout from "./pages/HomeLogout";
+import HomeLogin from "./pages/HomeLogin";
+import PrivateRoute from "./utils/PrivateRoute";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLogout />,
+    element: <HomeLogout />, // Página pública
   },
   {
     path: "/home",
-    element: <HomeLogin />
+    element: (
+      <PrivateRoute>
+        <HomeLogin /> {/* Página protegida */}
+      </PrivateRoute>
+    ),
   },
-])
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
