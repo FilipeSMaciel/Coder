@@ -10,7 +10,7 @@ export default function HeroLogin() {
 
     return (
         <>
-            <section className="flex items-center justify-center drop-shadow-3xl">
+            <section className="flex items-center justify-center drop-shadow-3xl max-w-[98.9vw]">
                 {/* As divs serão ocultadas no path '/home' */}
                 {!isHomePage && <div className={leftGreen}></div>}
 
@@ -24,7 +24,7 @@ export default function HeroLogin() {
                 >
                     {/* Conteúdo principal */}
                     <div className="flex flex-col justify-center items-start lg:mx-16 p-5">
-                        <h1 className="text-verde_principal text-left text-[1.5rem] lg:text-[3rem] font-extralight">
+                        <h1 className="text-verde_principal font-jetbrains text-left text-[1.5rem] lg:text-[3rem] font-extralight">
                             &lt; O sistema feito para programadores em busca de um projeto novo / &gt;
                         </h1>
                         <h2 className="text-verde_principal/60 text-[0.8rem] lg:text-[2rem] font-jetbrains font-extralight p-3">
@@ -35,7 +35,7 @@ export default function HeroLogin() {
                     {/* A imagem é exibida somente no path '/home' */}
                     {isHomePage && (
                         <img
-                            className="block w-[20%] h-auto lg:w-[10%] mx-5"
+                            className="hidden lg:block w-[20%] h-auto lg:w-[10%] mx-5"
                             src="path-to-your-image" // Substitua pelo caminho correto da imagem
                             alt="Meio circulo à direita"
                         />

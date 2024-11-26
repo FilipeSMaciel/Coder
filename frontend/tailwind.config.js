@@ -13,6 +13,7 @@ export default {
         'texto_header': '#B3B3B3',
         'bg_botao-login': '#2C2C2C',
         'verde_principal': '#41FF00',
+        'fundo_lastProjects': '#3C3C3C',
       },
     },
     dropShadow: {

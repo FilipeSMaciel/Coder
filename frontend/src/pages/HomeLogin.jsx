@@ -10,7 +10,7 @@ export default function HomeLogin() {
   return (
     <>
       <Header />
-      <main>
+      <main className="flex flex-col gap-10 bg-background justify-center items-center">
         <HeroLogin />
         <LastProjects />
         <div>
