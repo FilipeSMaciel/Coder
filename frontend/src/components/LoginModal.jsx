@@ -1,8 +1,9 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-export default function LoginModal() {
+export default function LoginModal({ onLogin }) {
   const [isRegistering, setIsRegistering] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
@@ -11,14 +12,13 @@ export default function LoginModal() {
   const API_URL = "http://localhost:3000/users";
   const navigate = useNavigate();
 
-  // Inicializa o react-hook-form
   const { register, handleSubmit, reset, setValue } = useForm();
 
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
     if (storedUsername) {
       setIsLoggedIn(true);
-      setValue("username", storedUsername); // Preenche o campo username com o valor armazenado
+      setValue("username", storedUsername);
     }
   }, [setValue]);
 
@@ -34,6 +34,7 @@ export default function LoginModal() {
         setSuccessMessage("Login bem-sucedido! Bem-vindo.");
         localStorage.setItem("username", data.username);
         setIsLoggedIn(true);
+        onLogin(data.username);
         navigate("/home");
       } else {
         setErrorMessage("Usuário ou senha inválidos.");
@@ -66,7 +67,7 @@ export default function LoginModal() {
       if (response.ok) {
         setSuccessMessage("Cadastro realizado com sucesso! Agora você pode fazer login.");
         setIsRegistering(false);
-        reset(); // Limpa os campos do formulário
+        reset();
       } else {
         setErrorMessage("Erro ao tentar cadastrar. Tente novamente.");
       }
@@ -89,9 +90,8 @@ export default function LoginModal() {
         <img
           src=""
           alt="Imagem abstrata da tela de Login"
-          className={`w-1/2 transition-transform duration-300 ease-in-out ${
-            isRegistering ? "order-first" : "order-last"
-          }`}
+          className={`w-1/2 transition-transform duration-300 ease-in-out ${isRegistering ? "order-first" : "order-last"
+            }`}
         />
 
         <div className="w-1/2 flex flex-col items-center">
@@ -196,3 +196,7 @@ export default function LoginModal() {
     </section>
   );
 }
+
+LoginModal.propTypes = {
+  onLogin: PropTypes.func.isRequired,
+};

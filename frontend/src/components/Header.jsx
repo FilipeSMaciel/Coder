@@ -1,12 +1,10 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LoginButton from "./LoginButton";
 
 export default function Header({ setOpen }) {
     const navigate = useNavigate();
-    const location = useLocation();
-
     const [username, setUsername] = useState(null);
 
     useEffect(() => {
@@ -54,10 +52,9 @@ export default function Header({ setOpen }) {
 
                 {/* Botão de Login / Logout para Mobile */}
                 <button
-                    onClick={username ? handleLogout : openLoginModal}
+                    onClick={openLoginModal}
                     className="flex items-center size-10 justify-center sm:hidden"
                 >
-                    {/* <img className="h-12" src={username ? "Logout.png" : "Login.png"} alt="" /> */}
                     <img className="h-12" src={"Login.png"} alt="" />
                 </button>
 

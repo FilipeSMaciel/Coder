@@ -10,7 +10,6 @@ export default function HomeLogout() {
     const [open, setOpen] = useState(false);
 
     const handleLogin = (username) => {
-        // Salva o username no localStorage e fecha o modal
         localStorage.setItem("username", username);
         setOpen(false);
     };

@@ -1,6 +1,7 @@
 import { useLocation } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-function LoginButton({ openLoginModal, handleLogout, className }) {
+export default function LoginButton({ openLoginModal, handleLogout, className }) {
   const location = useLocation();
 
   // Verifica se o pathname é '/home'
@@ -11,9 +12,13 @@ function LoginButton({ openLoginModal, handleLogout, className }) {
       onClick={isHomePage ? handleLogout : openLoginModal}
       className={className}
     >
-      {isHomePage ? 'Logoff' : 'Entrar'}
+      {isHomePage ? 'Sair' : 'Entrar'}
     </button>
   );
 }
 
-export default LoginButton;
+LoginButton.propTypes = {
+  openLoginModal: PropTypes.func.isRequired,
+  handleLogout: PropTypes.func.isRequired,
+  className: PropTypes.string,
+};
