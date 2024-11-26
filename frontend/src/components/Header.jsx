@@ -50,6 +50,9 @@ export default function Header({ setOpen }) {
                         </button>
                     </ul>
                 </nav>
+                <button onClick={openLoginModal} className="flex items-center size-10 justify-center  sm:hidden"><img className=" h-12" src="Login.png" alt="" /></button>
+
+                <button className="flex items-center justify-center size-10  sm:hidden"><img className=" size-10" src="Database.png" alt="" /></button>
 
                 {/* Botão de Login / Logout */}
                 {username ? (
