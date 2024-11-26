@@ -27,7 +27,7 @@ export default function LoginModal({ onLogin }) {
     setSuccessMessage("");
 
     try {
-      const response = await fetch(`${API_URL}?username=${data.username}&password=${data.password}`);
+      const response = await fetch(`http://localhost:9000/users`);
       const users = await response.json();
 
       if (users.length > 0) {
