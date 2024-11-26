@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import LoginButton from "./LoginButton";
 
 export default function Header({ setOpen }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState(null);
+    const location = useLocation();
+    const isActive = (path) => location.pathname === path ? 'bg-black/35 border-t-[0.2rem] border-l-[0.2rem] px-3 border-b-[0.2rem] border-r-[0.2rem] border-t-black/80 border-l-black/80 border-b-verde_botao border-r-verde_botao' : '';
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("username");
@@ -36,12 +38,18 @@ export default function Header({ setOpen }) {
                 <nav className="gap-4 hidden sm:flex">
                     <ul className="flex gap-4">
                         <button>
-                            <li className="bg-black/35 border-t-[0.2rem] border-l-[0.2rem] px-3 border-b-[0.2rem] border-r-[0.2rem] border-t-black/80 border-l-black/80 border-b-verde_botao border-r-verde_botao">
-                                Home
-                            </li>
+                            <Link to="/home">
+                                <li className={isActive("/home")}>
+                                    Home
+                                </li>
+                            </Link>
                         </button>
                         <button>
-                            <li>Freelances</li>
+                            <Link to="/freelances">
+                                <li className={isActive("/freelances")}>
+                                    Freelances
+                                </li>
+                            </Link>
                         </button>
                         <button>
                             <li>Projetos</li>

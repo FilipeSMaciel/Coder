@@ -10,7 +10,7 @@ export default function HeroLogin() {
 
     return (
         <>
-            <section className="flex items-center justify-center drop-shadow-3xl max-w-[98.9vw]">
+            <section className="flex items-center justify-center drop-shadow-3xl w-[99vw] max-w-[98.9vw]">
                 {/* As divs serão ocultadas no path '/home' */}
                 {!isHomePage && <div className={leftGreen}></div>}
 
@@ -35,8 +35,8 @@ export default function HeroLogin() {
                     {/* A imagem é exibida somente no path '/home' */}
                     {isHomePage && (
                         <img
-                            className="hidden lg:block w-[20%] h-auto lg:w-[10%] mx-5"
-                            src="path-to-your-image" // Substitua pelo caminho correto da imagem
+                            className="hidden lg:block w-[20%] h-auto lg:w-[10%]"
+                            src="./Ellipse1.png" // Substitua pelo caminho correto da imagem
                             alt="Meio circulo à direita"
                         />
                     )}
