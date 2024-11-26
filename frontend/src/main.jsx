@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import HomeLogout from "./pages/HomeLogout";
 import HomeLogin from "./pages/HomeLogin";
+import Freelances from "./pages/Freelances";
 import PrivateRoute from "./utils/PrivateRoute";
 
 const router = createBrowserRouter([
@@ -16,6 +17,14 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <HomeLogin /> {/* Página protegida */}
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/freelances",
+    element: (
+      <PrivateRoute>
+        <Freelances />
       </PrivateRoute>
     ),
   },
