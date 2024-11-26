@@ -1,6 +1,6 @@
 export default function LastProjects() {
 
-    const nameDiv = "hidden lg:flex items-center pl-3 w-[18rem] h-[7rem]  bg-fundo_lastProjects text-verde_principal font-jetbrains text-left text-[2.3rem] font-extralight"
+    const nameDiv = "hidden lg:flex items-center pl-3 lg:w-[13rem] lg:h-[7rem]  bg-fundo_lastProjects text-verde_principal font-jetbrains text-left text-[2rem] font-extralight"
     const iconsDiv = "border-[0.1rem] border-verde_principal w-20 h-20 p-2 lg:w-32 lg:h-32"
     const lastProjectDiv = "flex items-center"
 

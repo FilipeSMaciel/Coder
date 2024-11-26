@@ -18,6 +18,7 @@ export default {
     },
     dropShadow: {
       '3xl': '1px 8px 18px rgba(0, 0, 0, 0.8)',
+      '4xl': '1px 10px 18px rgba(0, 0, 0, 0.9)',
       
     },
     fontFamily: {

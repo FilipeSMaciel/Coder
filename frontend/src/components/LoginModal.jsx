@@ -136,13 +136,13 @@ export default function LoginModal({ onLogin }) {
                     required
                     {...register("password")}
                   />
-                  {/* <input
+                   <input
                     type="email"
                     placeholder="Email"
                     className="border border-gray-300 rounded-md p-2 w-full"
                     required
                     {...register("email")}
-                  /> */}
+                  /> 
                   <input
                     type="submit"
                     value="REGISTER"
