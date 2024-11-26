@@ -124,7 +124,6 @@ export default function LoginModal({ onLogin }) {
                 <form className="w-full flex flex-col items-center gap-4" onSubmit={handleSubmit(onSubmitRegister)}>
                   <input
                     type="text"
-                    name="username"
                     placeholder="Nome de usuário"
                     className="border border-gray-300 rounded-md p-2 w-full"
                     required
@@ -132,20 +131,18 @@ export default function LoginModal({ onLogin }) {
                   />
                   <input
                     type="password"
-                    name="password"
                     placeholder="Senha"
                     className="border border-gray-300 rounded-md p-2 w-full"
                     required
                     {...register("password")}
                   />
-                  <input
+                  {/* <input
                     type="email"
-                    name="email"
                     placeholder="Email"
                     className="border border-gray-300 rounded-md p-2 w-full"
                     required
                     {...register("email")}
-                  />
+                  /> */}
                   <input
                     type="submit"
                     value="REGISTER"

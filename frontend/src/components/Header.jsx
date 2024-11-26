@@ -23,8 +23,10 @@ export default function Header({ setOpen }) {
     };
 
     const getInitials = (name) => {
-        const [firstName, lastName] = name.split(" ");
-        return `${firstName[0].toUpperCase()}${lastName ? lastName[0].toUpperCase() : ""}`;
+        const names = name.split(" ");
+        const firstNameInitial = names[0][0].toUpperCase();
+        const lastNameInitial = names.length > 1 ? names[names.length - 1][0].toUpperCase() : "";
+        return `${firstNameInitial}${lastNameInitial}`;
     };
 
     return (
