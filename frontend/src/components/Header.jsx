@@ -1,13 +1,15 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import LoginButton from "./LoginButton";
 
 export default function Header({ setOpen }) {
     const navigate = useNavigate();
+    const location = useLocation();
+
     const [username, setUsername] = useState(null);
 
     useEffect(() => {
-        // Recupera o username armazenado no localStorage ao carregar o componente
         const storedUsername = localStorage.getItem("username");
         if (storedUsername) setUsername(storedUsername);
     }, []);
@@ -17,10 +19,9 @@ export default function Header({ setOpen }) {
     };
 
     const handleLogout = () => {
-        // Remove o username do localStorage e redireciona para a página inicial
         localStorage.removeItem("username");
         setUsername(null);
-        navigate("/"); // Substitua "/" pela rota desejada
+        navigate("/");
     };
 
     const getInitials = (name) => {
@@ -50,35 +51,32 @@ export default function Header({ setOpen }) {
                         </button>
                     </ul>
                 </nav>
-                <button onClick={openLoginModal} className="flex items-center size-10 justify-center  sm:hidden"><img className=" h-12" src="Login.png" alt="" /></button>
 
-                <button className="flex items-center justify-center size-10  sm:hidden"><img className=" size-10" src="Database.png" alt="" /></button>
+                {/* Botão de Login / Logout para Mobile */}
+                <button
+                    onClick={username ? handleLogout : openLoginModal}
+                    className="flex items-center size-10 justify-center sm:hidden"
+                >
+                    {/* <img className="h-12" src={username ? "Logout.png" : "Login.png"} alt="" /> */}
+                    <img className="h-12" src={"Login.png"} alt="" />
+                </button>
 
-                {/* Botão de Login / Logout */}
-                {username ? (
-                    <div className="flex items-center gap-4">
-                        {/* Botão de logout */}
-                        <button
-                            className="hidden lg:flex lg:ml-40 lg:bg-bg_botao-login lg:px-10 lg:items-center lg:justify-center lg:rounded-md hover:scale-105 hover:border-neutral-700 hover:border-[0.1rem] transition-transform duration-100 ease-in-out"
-                            onClick={handleLogout}
-                        >
-                            Logout
-                        </button>
+                <button className="flex items-center justify-center size-10 sm:hidden"><img className=" size-10" src="Database.png" alt="" /></button>
 
-                        {/* Círculo com as iniciais */}
-                        <div className="ml-6 lg:bg-bg_botao-login lg:flex lg:items-center lg:justify-center lg:rounded-full lg:w-14 lg:h-14 lg:text-center lg:text-lg lg:font-bold lg:text-white">
+                {/* Botão de Login / Logout para Desktop */}
+                <div className="hidden lg:flex items-center gap-4">
+                    <LoginButton
+                        openLoginModal={openLoginModal}
+                        handleLogout={handleLogout}
+                        className="ml-4 bg-bg_botao-login px-6 items-center justify-center rounded-md hover:scale-105 hover:border-neutral-700 hover:border-[0.1rem] transition-transform duration-100 ease-in-out"
+                    />
+
+                    {username && (
+                        <div className="ml-6 bg-bg_botao-login flex items-center justify-center rounded-full w-14 h-14 text-center text-lg font-bold text-white">
                             {getInitials(username)}
                         </div>
-
-                    </div>
-                ) : (
-                    <button
-                        className="hidden lg:flex lg:ml-40 lg:bg-bg_botao-login lg:px-10 lg:items-center lg:justify-center lg:rounded-md hover:scale-105 hover:border-neutral-700 hover:border-[0.1rem] transition-transform duration-100 ease-in-out"
-                        onClick={openLoginModal}
-                    >
-                        Entrar
-                    </button>
-                )}
+                    )}
+                </div>
             </div>
         </header>
     );
