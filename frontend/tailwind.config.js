@@ -24,5 +24,21 @@ export default {
     fontFamily: {
       'jetbrains': ['JetBrains Mono', 'monospace'],
   },
+  animation: {
+    'animacaoSubir': 'animacaoCima 10s linear infinite',
+    'animacaoDescer': 'animacaoBaixo 10s linear infinite',
+  },
+  keyframes: {
+    animacaoCima: { 
+      '0%': {transform: 'translateY(758px)'},
+      '100%': {transform: 'translateY(0px)'},
+  }},
+  keyframes: {
+    animacaoBaixo: {
+      '0%': {transform: 'translateY(0px)'},
+      '100%': {transform: 'translateY(1358px)'},
+    }
+  },
+
   plugins: [],
 }};

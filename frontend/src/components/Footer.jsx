@@ -1,5 +1,6 @@
 export default function Footer() {
     return (
+        <div className="relative">
         <footer className=" flex lg:flex-row lg:justify-center gap-10 lg:gap-20 lg:items-start items-center flex-col justify-center p-10 pb-8 border-t-[0.3rem] border-verde_principal bg-background ">
             <div className="flex gap-10 items-center font-jetbrains">
                 <img src="./LogoX.png" alt="Logo do X" />
@@ -43,5 +44,7 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+        </div>
+        
     )
 }
