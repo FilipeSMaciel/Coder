@@ -10,6 +10,7 @@ export default function Header({ setOpen }) {
     const isActive = (path) => location.pathname === path ? 'bg-black/35 border-t-[0.2rem] border-l-[0.2rem] px-3 border-b-[0.2rem] border-r-[0.2rem] border-t-black/80 border-l-black/80 border-b-verde_botao border-r-verde_botao' : '';
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const homeLink = isLoggedIn ? '/home' : '/';
+    const freelanceLink = isLoggedIn ? '/freelances' : '/';
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("username");
@@ -40,10 +41,10 @@ export default function Header({ setOpen }) {
 
     return (
         <header className="flex justify-evenly drop-shadow-3xl border-b-2 border-verde_principal gap-32 lg:gap-[40rem] items-center bg-background w-full h-20 text-texto_header">
-            
+
             <img className="size-16" src="logo.png" alt="Logo Coder++" />
 
-            <div className="flex">
+            <div className="flex items-center gap-4">
                 <nav className="gap-4 hidden sm:flex">
                     <ul className="flex gap-4">
                         <button>
@@ -54,8 +55,8 @@ export default function Header({ setOpen }) {
                             </Link>
                         </button>
                         <button>
-                            <Link to="/freelances">
-                                <li className={isActive("/freelances")}>
+                            <Link to={freelanceLink}>
+                                <li className={isActive(location.pathname === "/" || location.pathname === "/freelances" ? "/freelances" : "/")}>
                                     Freelances
                                 </li>
                             </Link>
@@ -86,13 +87,12 @@ export default function Header({ setOpen }) {
                         handleLogout={handleLogout}
                         className="ml-4 bg-bg_botao-login px-6 items-center justify-center rounded-md hover:scale-105 hover:border-neutral-700 hover:border-[0.1rem] transition-transform duration-100 ease-in-out"
                     />
-
-                    {username && (
-                        <div className="ml-6 bg-bg_botao-login flex items-center justify-center rounded-full w-14 h-14 text-center text-lg font-bold text-white">
-                            {getInitials(username)}
-                        </div>
-                    )}
                 </div>
+                {username && (
+                    <div className="ml-6 bg-bg_botao-login flex items-center justify-center rounded-full w-14 h-14 text-center text-lg font-bold text-white">
+                        {getInitials(username)}
+                    </div>
+                )}
             </div>
         </header>
     );
