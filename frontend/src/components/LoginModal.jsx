@@ -27,7 +27,7 @@ export default function LoginModal({ onLogin }) {
     setSuccessMessage("");
 
     try {
-      const response = await fetch(`http://localhost:9000/users`);
+      const response = await fetch(API_URL);
       const users = await response.json();
 
       if (users.length > 0) {
