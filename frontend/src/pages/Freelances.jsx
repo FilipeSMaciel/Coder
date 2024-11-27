@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
 import { useState } from "react";
+import BarraPesquisa from "../components/BarraPesquisa";
 
 export default function Freelances() {
     const [open, setOpen] = useState(false);
@@ -26,7 +27,15 @@ export default function Freelances() {
                     <MonthCourses />
                     <MainProjects />
                 </div>
-            </main> */}
+            </main> 
+            PEDRO<<<
+            */}
+
+            <main>
+                {/*<BarraPesquisa />
+                ERIC<<<
+                */}
+            </main>
 
             <Modal
                 open={open}
