@@ -6,11 +6,11 @@ import LoginButton from "./LoginButton";
 export default function Header({ setOpen }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState(null);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
     const location = useLocation();
-    const isActive = (path) => location.pathname === path ? 'bg-black/35 border-t-[0.2rem] border-l-[0.2rem] px-3 border-b-[0.2rem] border-r-[0.2rem] border-t-black/80 border-l-black/80 border-b-verde_botao border-r-verde_botao' : '';
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const homeLink = isLoggedIn ? '/home' : '/';
-    const freelanceLink = isLoggedIn ? '/freelances' : '/';
+    const homeLink = username && isLoggedIn ? '/home' : '/';
+    const freelanceLink = username && isLoggedIn ? '/freelances' : '/';
 
     useEffect(() => {
         const storedUsername = localStorage.getItem("username");
@@ -22,6 +22,15 @@ export default function Header({ setOpen }) {
         }
     }, []);
 
+    useEffect(() => {
+        console.log("Current Path:", location.pathname);
+    }, [location]);
+
+    const isActive = (path) => {
+        console.log(`Checking if ${location.pathname} matches ${path}`);
+        return location.pathname === path ? 'bg-black/35 border-t-[0.2rem] border-l-[0.2rem] px-3 border-b-[0.2rem] border-r-[0.2rem] border-t-black/80 border-l-black/80 border-b-verde_botao border-r-verde_botao' : '';
+    };
+
     const openLoginModal = () => {
         setOpen(true);
     };
@@ -30,6 +39,10 @@ export default function Header({ setOpen }) {
         localStorage.removeItem("username");
         setUsername(null);
         navigate("/");
+    };
+
+    const openMobileMenu = () => {
+        setShowMobileMenu(!showMobileMenu);
     };
 
     const getInitials = (name) => {
@@ -49,14 +62,14 @@ export default function Header({ setOpen }) {
                     <ul className="flex gap-4">
                         <button>
                             <Link to={homeLink}>
-                                <li className={isActive(location.pathname === "" || location.pathname === "/home" ? "/home" : "/")}>
+                                <li className={isActive("/") || isActive("/home")}>
                                     Home
                                 </li>
                             </Link>
                         </button>
                         <button>
                             <Link to={freelanceLink}>
-                                <li className={isActive(location.pathname === "/" || location.pathname === "/freelances" ? "/freelances" : "/")}>
+                                <li className={isActive("/freelances")}>
                                     Freelances
                                 </li>
                             </Link>
@@ -78,7 +91,44 @@ export default function Header({ setOpen }) {
                     <img className="h-12" src={username ? 'logoff.png' : "Login.png"} alt="" />
                 </button>
 
-                <button className="flex items-center justify-center size-10 sm:hidden"><img className=" size-10" src="Database.png" alt="" /></button>
+                <button
+                    className="flex items-center justify-center size-10 sm:hidden"
+                    onClick={openMobileMenu}
+                ><img className=" size-10" src="Database.png" alt="" /></button>
+
+                {username && showMobileMenu && (
+                    <div className="bg-background flex flex-col items-center justify-center gap-4 mt-40">
+                        <ul className="flex flex-col gap-4">
+                            <div className="ml-6 bg-bg_botao-login flex items-center justify-center rounded-full w-14 h-14 text-center text-lg font-bold text-white">
+                                {getInitials(username)}
+                            </div>
+                            <button>
+                                <Link to={homeLink}
+                                    onClick={() => setShowMobileMenu(false)}
+                                >
+                                    <li className={isActive("/") || isActive("/home")}>
+                                        Home
+                                    </li>
+                                </Link>
+                            </button>
+                            <button>
+                                <Link to={freelanceLink}
+                                    onClick={() => setShowMobileMenu(false)}
+                                >
+                                    <li className={isActive("/freelances")}>
+                                        Freelances
+                                    </li>
+                                </Link>
+                            </button>
+                            <button>
+                                <li>Projetos</li>
+                            </button>
+                            <button>
+                                <li>Cursos</li>
+                            </button>
+                        </ul>
+                    </div>
+                )}
 
                 {/* Botão de Login / Logout para Desktop */}
                 <div className="hidden lg:flex items-center gap-4">
