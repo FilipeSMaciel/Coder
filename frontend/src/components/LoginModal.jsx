@@ -136,19 +136,19 @@ export default function LoginModal({ onLogin }) {
                     required
                     {...register("password")}
                   />
-                   <input
+                  <input
                     type="email"
                     placeholder="Email"
                     className="border border-gray-300 rounded-md p-2 w-full"
                     required
                     {...register("email")}
-                  /> 
+                  />
                   <button
                     type="submit"
                     className="bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-600 cursor-pointer"
                   >
                     REGISTER
-                    </button>
+                  </button>
                 </form>
               </div>
             ) : (

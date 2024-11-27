@@ -22,7 +22,7 @@ export default function HomeLogin() {
       <main className="flex flex-col gap-10 bg-background justify-center items-center">
         <HeroLogin />
         <LastProjects />
-        <div className="flex flex-col lg:flex-row justify-evenly lg:gap-40 p-16">
+        <div className="flex flex-col lg:flex-row justify-between p-16">
           <MonthCourses />
           <MainProjects />
         </div>

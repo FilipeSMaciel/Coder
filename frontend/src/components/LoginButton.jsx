@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 export default function LoginButton({ openLoginModal, handleLogout, className }) {
   const location = useLocation();
 
-  // Verifica se o pathname é '/home'
   const isHomePage = location.pathname === '/home';
+  const isFreelancePage = location.pathname === '/freelances';
 
   return (
     <button
-      onClick={isHomePage ? handleLogout : openLoginModal}
+      onClick={isHomePage | isFreelancePage ? handleLogout : openLoginModal}
       className={className}
     >
-      {isHomePage ? 'Sair' : 'Entrar'}
+      {isHomePage | isFreelancePage ? 'Sair' : 'Entrar'}
     </button>
   );
 }
