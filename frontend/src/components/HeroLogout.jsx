@@ -11,18 +11,18 @@ export default function HeroLogout() {
 
                 <HeroLogin />
             </section>
-            <section className="flex justify-around mx-9 items-center mt-16 lg:h-[35rem] drop-shadow-3xl">
+            <section className="sm:w-[90vw] flex justify-evenly items-center mt-16 lg:h-[60vh] drop-shadow-3xl pb-16">
 
-                <img className="hidden lg:flex lg:w-[40rem]" src="./notebookLogout.png" alt="" />
+                <img className="hidden lg:flex lg:w-[40vw]" src="./notebookLogout.png" alt="" />
 
                 <div className="">
 
-                    <div className=" w-[80vw] lg:w-[35rem] h-[18.4375rem] lg:h-[22rem] flex items-center justify-evenly flex-col  bg-bg_botao-login border-t-[0.1rem] border-verde_principal">
-                        <h4 className="w-[18rem] lg:w-[30rem] font-jetbrains text-[1.8rem] lg:text-[2.3rem]  text-verde_principal/60"># Fácil, prático e veloz &#123;</h4>
-                        <p className="w-[16rem] lg:w-[30rem] font-jetbrains font-extralight text-[1rem] lg:text-[1.5rem] text-verde_botao ">Cursos, projetos, portfólios e vagas atualizadas 24 horas, todos os dias. &#125;</p>
+                    <div className=" w-[80vw] lg:w-[35vw] h-[34vh] lg:h-[22rem] p-10 flex items-center justify-evenly flex-col  bg-bg_botao-login border-t-[0.1rem] border-verde_principal">
+                        <h4 className="w-[18rem] lg:w-[30vw] font-jetbrains text-[1.8rem] lg:text-[2.3rem]  text-verde_principal/60"># Fácil, prático e veloz &#123;</h4>
+                        <p className="w-[16rem] lg:w-[30vw] font-jetbrains font-extralight text-[1rem] lg:text-[1.5vw] text-verde_botao ">Cursos, projetos, portfólios e vagas atualizadas 24 horas, todos os dias. &#125;</p>
+                        <img className="lg:hidden scale-x-[-1] w-[10rem] ml-[10rem] mt-[-1rem]" src="./notebook.png" alt="" />
                     </div>
 
-                    <img className="lg:hidden scale-x-[-1] w-[10rem] ml-[10rem] mt-[-5rem]" src="./notebook.png" alt="" />
 
                 </div>
 

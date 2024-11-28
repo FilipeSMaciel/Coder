@@ -17,12 +17,12 @@ export default function HomeLogin() {
   };
 
   return (
-    <>
+    <div>
       <Header setOpen={setOpen} />
-      <main className="flex flex-col gap-10 bg-background justify-center items-center">
+      <main className="flex flex-col gap-10 bg-background justify-center items-center pb-[2.5rem]">
         <HeroLogin />
         <LastProjects />
-        <div className="flex flex-col lg:flex-row justify-between p-16">
+        <div className="sm:w-[76vw] h-[63rem] sm:h-[82vh] flex flex-col sm:flex-row items-center justify-between ">
           <MonthCourses />
           <MainProjects />
         </div>
@@ -35,6 +35,6 @@ export default function HomeLogin() {
         <LoginModal onLogin={handleLogoff} />
       </Modal>
       <Footer />
-    </>
+    </div>
   );
 }
