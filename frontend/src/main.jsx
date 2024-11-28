@@ -28,6 +28,34 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
   },
+  {
+    path: "/projects",
+    element: (
+      <PrivateRoute>
+        <div>Projects</div>
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "/courses",
+    element: (
+      <PrivateRoute>
+        <div>Courses</div>
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "/profile",
+    element: (
+      <PrivateRoute>
+        <div>Profile</div>
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "*",
+    element: <div className="text-3xl text-verde_principal background font-jetbrains">404</div>,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

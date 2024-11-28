@@ -12,6 +12,9 @@ export default function Menu({ setOpen }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const homeLink = username && isLoggedIn ? '/home' : '/';
   const freelanceLink = username && isLoggedIn ? '/freelances' : '/';
+  const projectsLink = username && isLoggedIn ? '/projects' : '/';
+  const coursesLink = username && isLoggedIn ? '/courses' : '/';
+  const profileLink = username && isLoggedIn ? '/profile' : '/';
 
   const isActive = (path) => {
     console.log(`Checking if ${location.pathname} matches ${path}`);
@@ -56,10 +59,16 @@ export default function Menu({ setOpen }) {
             >
               Freelances
             </Link>
-            <Link to='placeholderProjetos'>
+            <Link to={projectsLink}
+              onClick={() => setShowMobileMenu(false)}
+              className={isActive('/projects')}
+            >
               Projetos
             </Link>
-            <Link to='placeholderCursos'>
+            <Link to={coursesLink}
+              onClick={() => setShowMobileMenu(false)}
+              className={isActive('/courses')}
+            >
               Cursos
             </Link>
           </nav>
@@ -78,9 +87,15 @@ export default function Menu({ setOpen }) {
           </button>
 
           {username && (
-            <div className="hidden bg-bg_botao-login sm:flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white">
-              {getInitials(username)}
-            </div>
+            <Link
+              to={profileLink}
+              onClick={() => setShowMobileMenu(false)}
+              className={isActive('/profile')}
+            >
+              <div className="hidden bg-bg_botao-login sm:flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white">
+                {getInitials(username)}
+              </div>
+            </Link>
           )}
         </div>
       </div>
@@ -89,7 +104,6 @@ export default function Menu({ setOpen }) {
         <Link to={homeLink}
           onClick={() => setShowMobileMenu(false)}
           className={`${isActive('/') || isActive('/home')} py-1`}
-
         >
           Home
         </Link>
@@ -99,20 +113,32 @@ export default function Menu({ setOpen }) {
         >
           Freelances
         </Link>
-        <Link to='placeholderProjetos'>
+        <Link to={projectsLink}
+          onClick={() => setShowMobileMenu(false)}
+          className={isActive('/projects')}
+        >
           Projetos
         </Link>
-        <Link to='placeholderCursos'>
+        <Link to={coursesLink}
+          onClick={() => setShowMobileMenu(false)}
+          className={isActive('/courses')}
+        >
           Cursos
         </Link>
 
         {username && (
-          <div className="flex items-center justify-start gap-4">
-            <div className="bg-bg_botao-login flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white">
-              {getInitials(username)}
+          <Link
+            to={profileLink}
+            onClick={() => setShowMobileMenu(false)}
+            className={isActive('/profile')}
+          >
+            <div className="flex items-center justify-start gap-4">
+              <div className="bg-bg_botao-login flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white">
+                {getInitials(username)}
+              </div>
+              {username}
             </div>
-            {username}
-          </div>
+          </Link>
         )}
       </nav>
     </header>
