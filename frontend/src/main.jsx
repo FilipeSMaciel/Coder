@@ -6,17 +6,21 @@ import HomeLogout from "./pages/HomeLogout";
 import HomeLogin from "./pages/HomeLogin";
 import Freelances from "./pages/Freelances";
 import PrivateRoute from "./utils/PrivateRoute";
+import Profile from "./pages/Profile";
+import Courses from "./pages/Courses";
+import Projects from "./pages/Projects";
+import Error404 from "./pages/Error404";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLogout />, // Página pública
+    element: <HomeLogout />,
   },
   {
     path: "/home",
     element: (
       <PrivateRoute>
-        <HomeLogin /> {/* Página protegida */}
+        <HomeLogin />
       </PrivateRoute>
     ),
   },
@@ -32,7 +36,7 @@ const router = createBrowserRouter([
     path: "/projects",
     element: (
       <PrivateRoute>
-        <div>Projects</div>
+        <Projects />
       </PrivateRoute>
     )
   },
@@ -40,7 +44,7 @@ const router = createBrowserRouter([
     path: "/courses",
     element: (
       <PrivateRoute>
-        <div>Courses</div>
+        <Courses />
       </PrivateRoute>
     )
   },
@@ -48,13 +52,13 @@ const router = createBrowserRouter([
     path: "/profile",
     element: (
       <PrivateRoute>
-        <div>Profile</div>
+        <Profile />
       </PrivateRoute>
     )
   },
   {
     path: "*",
-    element: <div className="text-3xl text-verde_principal background font-jetbrains">404</div>,
+    element: <Error404 />,
   }
 ]);
 
