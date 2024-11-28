@@ -26,8 +26,11 @@ export default function HomeLogout() {
                 onClose={() => setOpen(false)}
             >
                 <LoginModal onLogin={handleLogin} />
+            
             </Modal>
+            
             <Footer />
+            
         </>
     );
 }

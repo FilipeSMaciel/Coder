@@ -1,32 +1,53 @@
+import AnimacaoCod from "./AnimacaoCod";
 import HeroLogin from "./HeroLogin";
 
 export default function HeroLogout() {
     return (
         <>
-            <section className="flex flex-col items-center ">
-                <div className="flex flex-col items-center w-[98.9vw] bg-bg_botao-login lg:h-[89vh]">
-
-                    <img className="w-[16rem] mt-16 mb-20 lg:w-[35rem] lg:mt-[9rem]" src="./coderforfree.png" alt="Coder++ Logo completo" />
+            <section className="flex flex-col items-center relative">
+                {/* Seção principal com a logo */}
+                <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[89vh]">
+                    <img
+                        className="w-[16rem] mt-16 mb-20 lg:w-[35rem] lg:mt-[9rem]"
+                        src="./coderforfree.png"
+                        alt="Coder++ Logo completo"
+                    />
                 </div>
 
+                {/* Componente de animação (comentado para referência futura) */}
+                {/* <AnimacaoCod /> */}
+
+                {/* Componente de login */}
                 <HeroLogin />
             </section>
+
+            {/* Segunda seção com conteúdo adicional */}
             <section className="sm:w-[90vw] flex justify-evenly items-center mt-16 lg:h-[60vh] drop-shadow-3xl pb-16">
+                <div className="flex justify-around mx-9 items-center mt-16 lg:h-[35rem] drop-shadow-3xl">
+                    {/* Imagem exibida apenas em telas grandes */}
+                    <img
+                        className="hidden lg:flex lg:w-[40vw]"
+                        src="./notebookLogout.png"
+                        alt="Notebook ilustrativo"
+                    />
 
-                <img className="hidden lg:flex lg:w-[40vw]" src="./notebookLogout.png" alt="" />
-
-                <div className="">
-
-                    <div className=" w-[80vw] lg:w-[35vw] h-[34vh] lg:h-[22rem] p-10 flex items-center justify-evenly flex-col  bg-bg_botao-login border-t-[0.1rem] border-verde_principal">
-                        <h4 className="w-[18rem] lg:w-[30vw] font-jetbrains text-[1.8rem] lg:text-[2.3rem]  text-verde_principal/60"># Fácil, prático e veloz &#123;</h4>
-                        <p className="w-[16rem] lg:w-[30vw] font-jetbrains font-extralight text-[1rem] lg:text-[1.5vw] text-verde_botao ">Cursos, projetos, portfólios e vagas atualizadas 24 horas, todos os dias. &#125;</p>
-                        <img className="lg:hidden scale-x-[-1] w-[10rem] ml-[10rem] mt-[-1rem]" src="./notebook.png" alt="" />
+                    {/* Bloco de informações */}
+                    <div className="w-[80vw] lg:w-[35vw] h-[34vh] lg:h-[22rem] p-10 flex flex-col items-center justify-evenly bg-bg_botao-login border-t-[0.1rem] border-verde_principal">
+                        <h4 className="w-[18rem] lg:w-[30vw] font-jetbrains text-[1.8rem] lg:text-[2.3rem] text-verde_principal/60">
+                            # Fácil, prático e veloz &#123;
+                        </h4>
+                        <p className="w-[16rem] lg:w-[30vw] font-jetbrains font-extralight text-[1rem] lg:text-[1.5vw] text-verde_botao">
+                            Cursos, projetos, portfólios e vagas atualizadas 24 horas, todos os dias. &#125;
+                        </p>
+                        {/* Imagem adicional exibida apenas em telas menores */}
+                        <img
+                            className="lg:hidden scale-x-[-1] w-[10rem] ml-[10rem] mt-[-1rem]"
+                            src="./notebook.png"
+                            alt="Notebook ilustrativo"
+                        />
                     </div>
-
-
                 </div>
-
             </section>
         </>
-    )
+    );
 }
