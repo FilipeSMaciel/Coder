@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export default function BarraPesquisa() {
 
-    const { handleSubmit } = useForm();
+    const { handleSubmit, register } = useForm();
 
-    const onSubmitSearch = async (data) => {
+    const onSubmitSearch = async () => {
 
     }
 
@@ -37,7 +37,7 @@ export default function BarraPesquisa() {
                 </div>
                 <div>
                     <div>
-                        <Projeto />
+                        {/* <Projeto /> */}
                     </div>
                 </div>
             </div>
