@@ -16,8 +16,8 @@ export default function HomeLogout() {
 
     return (
         <>
-            <Header setOpen={setOpen} />
-            <main className="bg-background">
+            <Header className="" setOpen={setOpen} />
+            <main className="bg-background ">
                 <HeroLogout />
             </main>
 

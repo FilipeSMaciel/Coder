@@ -15,7 +15,7 @@ export default function HeroLogout() {
                 </div>
 
                 {/* Componente de animação (comentado para referência futura) */}
-                {/* <AnimacaoCod /> */}
+                { <AnimacaoCod /> }
 
                 {/* Componente de login */}
                 <HeroLogin />
