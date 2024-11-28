@@ -31,6 +31,7 @@ export default function HomeLogin() {
       <Modal
         open={open}
         onClose={() => setOpen(false)}
+        center
       >
         <LoginModal onLogin={handleLogoff} />
       </Modal>

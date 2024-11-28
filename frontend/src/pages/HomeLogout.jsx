@@ -24,13 +24,14 @@ export default function HomeLogout() {
             <Modal
                 open={open}
                 onClose={() => setOpen(false)}
+                center
             >
                 <LoginModal onLogin={handleLogin} />
-            
+
             </Modal>
-            
+
             <Footer />
-            
+
         </>
     );
 }

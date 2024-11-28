@@ -40,6 +40,7 @@ export default function Freelances() {
             <Modal
                 open={open}
                 onClose={() => setOpen(false)}
+                center
             >
                 <LoginModal onLogin={handleLogoff} />
             </Modal>

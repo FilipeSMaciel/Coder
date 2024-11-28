@@ -48,25 +48,25 @@ export default function Menu({ setOpen }) {
         <div className="flex items-center gap-10">
           <nav className="hidden gap-6 md:flex">
             <Link to={homeLink}
-              onClick={() => setShowMobileMenu(false)}
+              onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
               className={isActive('/') || isActive('/home')}
             >
               Home
             </Link>
             <Link to={freelanceLink}
-              onClick={() => setShowMobileMenu(false)}
+              onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
               className={isActive('/freelances')}
             >
               Freelances
             </Link>
             <Link to={projectsLink}
-              onClick={() => setShowMobileMenu(false)}
+              onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
               className={isActive('/projects')}
             >
               Projetos
             </Link>
             <Link to={coursesLink}
-              onClick={() => setShowMobileMenu(false)}
+              onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
               className={isActive('/courses')}
             >
               Cursos
@@ -89,10 +89,9 @@ export default function Menu({ setOpen }) {
           {username && (
             <Link
               to={profileLink}
-              onClick={() => setShowMobileMenu(false)}
-              className={isActive('/profile')}
+              onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
             >
-              <div className="hidden bg-bg_botao-login sm:flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white">
+              <div className="bg-bg_botao-login sm:flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white hidden">
                 {getInitials(username)}
               </div>
             </Link>
@@ -102,25 +101,25 @@ export default function Menu({ setOpen }) {
 
       <nav className={`${showMobileMenu ? 'flex flex-col' : 'hidden'} md:hidden gap-5 py-4`}>
         <Link to={homeLink}
-          onClick={() => setShowMobileMenu(false)}
+          onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
           className={`${isActive('/') || isActive('/home')} py-1`}
         >
           Home
         </Link>
         <Link to={freelanceLink}
-          onClick={() => setShowMobileMenu(false)}
+          onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
           className={isActive('/freelances')}
         >
           Freelances
         </Link>
         <Link to={projectsLink}
-          onClick={() => setShowMobileMenu(false)}
+          onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
           className={isActive('/projects')}
         >
           Projetos
         </Link>
         <Link to={coursesLink}
-          onClick={() => setShowMobileMenu(false)}
+          onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
           className={isActive('/courses')}
         >
           Cursos
@@ -129,8 +128,7 @@ export default function Menu({ setOpen }) {
         {username && (
           <Link
             to={profileLink}
-            onClick={() => setShowMobileMenu(false)}
-            className={isActive('/profile')}
+            onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
           >
             <div className="flex items-center justify-start gap-4">
               <div className="bg-bg_botao-login flex items-center justify-center rounded-full size-11 text-center text-lg font-bold text-white">

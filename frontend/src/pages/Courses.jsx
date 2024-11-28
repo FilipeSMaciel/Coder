@@ -19,6 +19,7 @@ export default function Courses() {
     <Modal
       open={open}
       onClose={() => setOpen(false)}
+      center
     >
       <LoginModal onLogin={handleLogoff} />
     </Modal>
