@@ -6,13 +6,16 @@ export default function LoginButton({ openLoginModal, handleLogout, className })
 
   const isHomePage = location.pathname === '/home';
   const isFreelancePage = location.pathname === '/freelances';
+  const isProjectsPage = location.pathname === '/projects';
+  const isCoursesPage = location.pathname === '/courses';
+  const isProfilePage = location.pathname === '/profile';
 
   return (
     <button
-      onClick={isHomePage | isFreelancePage ? handleLogout : openLoginModal}
+      onClick={isHomePage | isFreelancePage | isProjectsPage | isCoursesPage | isProfilePage ? handleLogout : openLoginModal}
       className={className}
     >
-      {isHomePage | isFreelancePage ? 'Sair' : 'Entrar'}
+      {isHomePage | isFreelancePage | isProjectsPage | isCoursesPage | isProfilePage ? 'Sair' : 'Entrar'}
     </button>
   );
 }

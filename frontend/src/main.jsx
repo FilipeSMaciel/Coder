@@ -6,17 +6,21 @@ import HomeLogout from "./pages/HomeLogout";
 import HomeLogin from "./pages/HomeLogin";
 import Freelances from "./pages/Freelances";
 import PrivateRoute from "./utils/PrivateRoute";
+import Profile from "./pages/Profile";
+import Courses from "./pages/Courses";
+import Projects from "./pages/Projects";
+import Error404 from "./pages/Error404";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomeLogout />, // Página pública
+    element: <HomeLogout />,
   },
   {
     path: "/home",
     element: (
       <PrivateRoute>
-        <HomeLogin /> {/* Página protegida */}
+        <HomeLogin />
       </PrivateRoute>
     ),
   },
@@ -28,6 +32,34 @@ const router = createBrowserRouter([
       </PrivateRoute>
     ),
   },
+  {
+    path: "/projects",
+    element: (
+      <PrivateRoute>
+        <Projects />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "/courses",
+    element: (
+      <PrivateRoute>
+        <Courses />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "/profile",
+    element: (
+      <PrivateRoute>
+        <Profile />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "*",
+    element: <Error404 />,
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

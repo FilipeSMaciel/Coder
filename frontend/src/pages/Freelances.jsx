@@ -1,5 +1,4 @@
 import Modal from "react-responsive-modal";
-import Header from "../components/Header";
 // import HeroLogin from "../components/HeroLogin";
 // import LastProjects from "../components/LastProjects";
 // import MainProjects from "../components/MainProjects";
@@ -7,7 +6,8 @@ import Header from "../components/Header";
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
 import { useState } from "react";
-import BarraPesquisa from "../components/BarraPesquisa";
+import Menu from "../components/Menu";
+// import BarraPesquisa from "../components/BarraPesquisa";
 
 export default function Freelances() {
     const [open, setOpen] = useState(false);
@@ -19,7 +19,7 @@ export default function Freelances() {
 
     return (
         <>
-            <Header setOpen={setOpen} />
+            <Menu setOpen={setOpen} />
             {/* <main className="flex flex-col gap-10 bg-background justify-center items-center">
                 <HeroLogin />
                 <LastProjects />

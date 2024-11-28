@@ -1,10 +1,10 @@
 import Modal from "react-responsive-modal";
 import "react-responsive-modal/styles.css";
 import { useState } from "react";
-import Header from "../components/Header";
 import HeroLogout from "../components/HeroLogout";
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 
 export default function HomeLogout() {
     const [open, setOpen] = useState(false);
@@ -16,8 +16,8 @@ export default function HomeLogout() {
 
     return (
         <>
-            <Header className="" setOpen={setOpen} />
-            <main className="bg-background ">
+            <Menu setOpen={setOpen} />
+            <main className="bg-background">
                 <HeroLogout />
             </main>
 
