@@ -1,4 +1,5 @@
 import Modal from "react-responsive-modal";
+import 'react-responsive-modal/styles.css';
 import Footer from "../components/Footer";
 import HeroLogin from "../components/HeroLogin";
 import LastProjects from "../components/LastProjects";

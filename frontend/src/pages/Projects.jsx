@@ -1,4 +1,5 @@
 import Modal from "react-responsive-modal";
+import 'react-responsive-modal/styles.css';
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import LoginModal from "../components/LoginModal";
