@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Menu from "../components/Menu";
 import Modal from "react-responsive-modal";
+import 'react-responsive-modal/styles.css';
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
 

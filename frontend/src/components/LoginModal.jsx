@@ -86,8 +86,8 @@ export default function LoginModal({ onLogin }) {
   };
 
   return (
-    <section className="flex items-center justify-center w-[80vw]  h-[60vh] font-jetbrains">
-      <div className="flex w-full max-w-4xl justify-center items-center gap-8">
+    <section className="flex items-center justify-center">
+      <div className="flex w-full max-w-4xl items-center gap-8">
         <img
           src=""
           alt="Imagem abstrata da tela de Login"
