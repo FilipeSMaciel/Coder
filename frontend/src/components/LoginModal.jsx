@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import "./LoginModal.css"
 
 export default function LoginModal({ onLogin }) {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -85,12 +86,12 @@ export default function LoginModal({ onLogin }) {
   };
 
   return (
-    <section className="flex items-center justify-center h-screen">
-      <div className="flex w-full max-w-4xl items-center gap-8">
+    <section className="flex items-center justify-center w-[80vw]  h-[60vh] font-jetbrains">
+      <div className="flex w-full max-w-4xl justify-center items-center gap-8">
         <img
           src=""
           alt="Imagem abstrata da tela de Login"
-          className={`w-1/2 transition-transform duration-300 ease-in-out ${isRegistering ? "order-first" : "order-last"
+          className={`w-1/2 hidden transition-transform duration-300 ease-in-out ${isRegistering ? "order-first" : "order-last"
             }`}
         />
 
@@ -111,11 +112,11 @@ export default function LoginModal({ onLogin }) {
           ) : (
             isRegistering ? (
               <div className="flex flex-col items-center">
-                <h1 className="text-2xl font-bold mb-4">Cadastro</h1>
-                <h2 className="mb-6">
-                  Ou se preferir,{" "}
+                <h1 className="text-[8vw] w-[] font-bold mb-4 text-verde_principal">&#123; Cadastro &#125;</h1>
+                <h2 className="mb-6 text-white text-[5vw]">
+                   Ou se preferir,{" "}
                   <button
-                    className="text-blue-600 underline"
+                    className="text-verde_principal underline text-[5vw]"
                     onClick={() => setIsRegistering(false)}
                   >
                     faça login.
@@ -145,7 +146,7 @@ export default function LoginModal({ onLogin }) {
                   />
                   <button
                     type="submit"
-                    className="bg-green-500 text-white rounded-md px-4 py-2 hover:bg-green-600 cursor-pointer"
+                    className="w-[65vw] bg-verde_principal/75 text-black rounded-md px-4 py-2 hover:bg-verde_botao cursor-pointer"
                   >
                     REGISTER
                   </button>
@@ -153,11 +154,11 @@ export default function LoginModal({ onLogin }) {
               </div>
             ) : (
               <div className="flex flex-col items-center">
-                <h1 className="text-2xl font-bold mb-4">Login</h1>
-                <h2 className="mb-6">
+                <h1 className="text-[8vw] font-bold mb-4 text-verde_principal">&#123; Login &#125;</h1>
+                <h2 className="mb-6 text-white text-[5vw]">
                   Ou se preferir,{" "}
                   <button
-                    className="text-blue-600 underline"
+                    className="text-verde_principal underline text-[5vw]"
                     onClick={() => setIsRegistering(true)}
                   >
                     cadastre-se.
@@ -168,7 +169,7 @@ export default function LoginModal({ onLogin }) {
                     type="text"
                     name="username"
                     placeholder="Nome de usuário"
-                    className="border border-gray-300 rounded-md p-2 w-full"
+                    className="border border-gray-300 rounded-md p-2 w-[65vw]"
                     required
                     {...register("username")}
                   />
@@ -180,7 +181,7 @@ export default function LoginModal({ onLogin }) {
                     required
                     {...register("password")}
                   />
-                  <button type="submit" className="bg-blue-500 text-white rounded-md px-4 py-2 hover:bg-blue-600 cursor-pointer">
+                  <button type="submit" className="w-full bg-verde_principal/75 text-black rounded-md px-4 py-2 hover:bg-verde_botao cursor-pointer">
                     ENTER
                   </button>
                 </form>
@@ -189,6 +190,9 @@ export default function LoginModal({ onLogin }) {
           )}
         </div>
       </div>
+
+          
+
     </section>
   );
 }
