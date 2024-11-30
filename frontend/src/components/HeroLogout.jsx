@@ -1,4 +1,4 @@
-import AnimacaoCod from "./AnimacaoCod";
+
 import HeroLogin from "./HeroLogin";
 
 export default function HeroLogout() {
@@ -6,7 +6,7 @@ export default function HeroLogout() {
         <>
             <section className="flex flex-col items-center relative">
                 {/* Seção principal com a logo */}
-                <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[89vh]">
+                <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[89.7vh] sm:pt-20">
                     <img
                         className="w-[16rem] mt-16 mb-20 lg:w-[35rem] lg:mt-[9rem]"
                         src="./coderforfree.png"
@@ -14,19 +14,17 @@ export default function HeroLogout() {
                     />
                 </div>
 
-                {/* Componente de animação (comentado para referência futura) */}
-                {/* { <AnimacaoCod /> } */}
 
                 {/* Componente de login */}
                 <HeroLogin />
             </section>
 
             {/* Segunda seção com conteúdo adicional */}
-            <section className="sm:w-[90vw] flex justify-evenly items-center mt-16 lg:h-[60vh] drop-shadow-3xl pb-16">
+            <section className="sm:w-[90vw] flex justify-evenly items-center mt-16 lg:h-[60vh] drop-shadow-3xl pb-16 sm:ml-[4vw]">
                 <div className="flex justify-around mx-9 items-center mt-16 lg:h-[35rem] drop-shadow-3xl">
                     {/* Imagem exibida apenas em telas grandes */}
                     <img
-                        className="hidden lg:flex lg:w-[40vw]"
+                        className="hidden lg:flex lg:w-[30vw] sm:p-12"
                         src="./notebookLogout.png"
                         alt="Notebook ilustrativo"
                     />

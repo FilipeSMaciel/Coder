@@ -4,6 +4,7 @@ import Modal from "react-responsive-modal";
 import 'react-responsive-modal/styles.css';
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
+import MenuProjetos from "../components/MenuProjetos";
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Profile() {
   return (
     <>
     <Menu setOpen={setOpen} />
-    <h1>Prerfil</h1>
+      <MenuProjetos />
     <Modal
       open={open}
       onClose={() => setOpen(false)}

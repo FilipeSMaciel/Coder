@@ -1,7 +1,7 @@
 export default function LastProjects() {
 
     const nameDiv = "hidden sm:flex items-center pl-3 sm:w-[13vw] sm:h-[14vh]  bg-fundo_lastProjects text-verde_principal font-jetbrains text-left text-[2rem] sm:text-[2vw] font-extralight"
-    const iconsDiv = "border-[0.1rem] border-verde_principal w-20 h-20 p-2 sm:w-[8vw] sm:h-[8vw]"
+    const iconsDiv = "border-[0.1rem] border-verde_principal w-[12vw] h-[6vh] p-2 sm:w-[8vw] sm:h-[16vh]"
     const lastProjectDiv = "flex items-center"
 
     return (
@@ -12,25 +12,25 @@ export default function LastProjects() {
 
             <div className="flex justify-evenly gap-10">
                 <div className={lastProjectDiv}>
-                    <img className={iconsDiv} src="./coca-cola.png" alt="Coca-Cola Logo" />
+                    <a href=""><img className={iconsDiv} src="./coca-cola.png" alt="Coca-Cola Logo" /></a>
 
                     <div className={nameDiv}>
-                        <p>Coca-Cola Inf.</p>
+                    <a href=""> <p>Coca-Cola Inf.</p></a>
                     </div>
 
                 </div>
                 <div className={lastProjectDiv}>
-                    <img className={iconsDiv} src="./trigold.png" alt="Trigold Logo" />
+                <a href="">  <img className={iconsDiv} src="./trigold.png" alt="Trigold Logo" /></a>
                     
                     <div className={nameDiv}>
-                        <p>Trigold LTDA.</p>
+                    <a href="">  <p>Trigold LTDA.</p></a>
                     </div>
 
                 </div>
                 <div className={lastProjectDiv}>
-                    <img className={iconsDiv} src="./google.png" alt="Google Logo" />
+                <a href="">  <img className={iconsDiv} src="./google.png" alt="Google Logo" /></a>
                     <div className={nameDiv}>
-                        <p>Google</p>
+                    <a href="">   <p>Google</p></a>
                     </div>
                 </div>
             </div>

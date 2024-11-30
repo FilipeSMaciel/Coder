@@ -19,7 +19,7 @@ export default {
     dropShadow: {
       '3xl': '1px 8px 18px rgba(0, 0, 0, 0.8)',
       '4xl': '1px 10px 18px rgba(0, 0, 0, 0.9)',
-      
+      '1xl': '1px 4px 4px 0px rgba(0, 0, 0, 0.25)',
     },
     fontFamily: {
       'jetbrains': ['JetBrains Mono', 'monospace'],
@@ -32,13 +32,13 @@ export default {
     animacaoCima: { 
       '0%': {transform: 'translateY(758px)'},
       '100%': {transform: 'translateY(0px)'},
-  }},
-  keyframes: {
-    animacaoBaixo: {
+    }},
+    keyframes: {
+      animacaoBaixo: {
       '0%': {transform: 'translateY(0px)'},
       '100%': {transform: 'translateY(1358px)'},
     }
-  },
+  }},
 
   plugins: [],
-}};
+};

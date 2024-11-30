@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import LoginModal from "../components/LoginModal";
 import { useState } from "react";
+import MenuProjetos from "../components/MenuProjetos";
 
 export default function Projects() {
   const [open, setOpen] = useState(false);
@@ -16,7 +17,7 @@ export default function Projects() {
   return (
     <>
       <Menu setOpen={setOpen} />
-      <h1>Projetos</h1>
+        <MenuProjetos />
       <Modal
         open={open}
         onClose={() => setOpen(false)}

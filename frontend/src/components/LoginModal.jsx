@@ -106,7 +106,7 @@ export default function LoginModal({ onLogin }) {
           {successMessage && <p className="text-green-500">{successMessage}</p>}
 
           {isLoggedIn ? (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center aspect-auto">
               <h1 className="text-2xl font-bold mb-4">Bem-vindo, {localStorage.getItem("username")}!</h1>
               <button
                 className="bg-red-500 text-white rounded-md px-4 py-2 hover:bg-red-600 cursor-pointer"

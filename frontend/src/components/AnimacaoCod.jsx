@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function AnimacaoCod() {
   // Estado para armazenar as frases
@@ -21,18 +21,27 @@ export default function AnimacaoCod() {
   // Função para gerar uma posição horizontal aleatória com espaçamento
   const gerarPosicaoHorizontal = () => {
     const maxLeft = 80; // 80% da largura da tela para a posição horizontal
-    const minLeft = 6; // Garantir um mínimo de 10% de distância
+    const minLeft = 6; // Garantir um mínimo de 6% de distância
     const left = Math.random() * (maxLeft - minLeft) + minLeft + '%';
     return left;
+  };
+
+  // Função para gerar uma posição vertical aleatória com espaçamento
+  const gerarPosicaoVertical = () => {
+    const maxTop = 80; // 80% da altura da tela para a posição vertical
+    const minTop = 6;  // Garantir um mínimo de 6% de distância
+    const top = Math.random() * (maxTop - minTop) + minTop + '%';
+    return top;
   };
 
   // Função para adicionar uma nova frase
   const adicionarNovaFrase = () => {
     const novaFrase = gerarFraseAleatoria();
     const left = gerarPosicaoHorizontal(); // Posição horizontal gerada aleatoriamente
+    const top = gerarPosicaoVertical(); // Posição vertical gerada aleatoriamente
     setFrases(prevFrases => [
       ...prevFrases, 
-      { frase: novaFrase, posicao: { top: '50%', left } }
+      { frase: novaFrase, posicao: { top, left } }
     ]);
   };
 
@@ -62,9 +71,8 @@ export default function AnimacaoCod() {
           key={index}
           className="animate-animacaoDescer opacity-50 text-verde_principal absolute"
           style={{
-            top: item.posicao.top,  // Mantém o top fixo em 50%
-            left: item.posicao.left, // Aplica a posição horizontal gerada
-            transform: 'translate(-50%, -50%)', // Rotaciona o texto em 90 graus
+            top: item.posicao.top,  // Posição vertical aleatória
+            left: item.posicao.left, // Posição horizontal aleatória
             whiteSpace: 'nowrap', // Impede a quebra de linha do texto
             transformOrigin: 'center', // Gira o texto a partir do centro
             width: 'max-content', // Impede que o texto se expanda além do necessário
