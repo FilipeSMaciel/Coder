@@ -3,6 +3,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,html}",
+    
   ],
   theme: {
     extend: {
@@ -23,6 +24,7 @@ export default {
     },
     fontFamily: {
       'jetbrains': ['JetBrains Mono', 'monospace'],
+      'inter': ['Inter', 'monospace'],
   },
   animation: {
     'animacaoSubir': 'animacaoCima 10s linear infinite',
@@ -40,5 +42,5 @@ export default {
     }
 }},
 
-  plugins: [],
+  plugins: [require('tailwindcss-font-inter')],
 };

@@ -7,15 +7,15 @@ export default function PerfilIconeEditar() {
         // Simulação de fetch do username
         async function fetchUsername() {
             try {
-                const response = await fetch('.../backend/user.json'); // Atualize para o endpoint correto
+                const response = await fetch('/backend/user.json'); // Atualize para o endpoint correto
                 if (response.ok) {
                     const data = await response.json();
                     setUsername(data.username || 'Default Username');
                 } else {
-                    setUsername('Error fetching username');
+                    setUsername('Error 505-12');
                 }
             } catch (error) {
-                setUsername('Error fetching username');
+                setUsername('Error 505-12'); // Error 505-12 (pra futuramente sabermos como codificar os bugs: 505-12 = Error Fetching Username)
             }
         }
 
