@@ -1,0 +1,9 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Coder++",
+      "contact": "admin@email"
+    }
+  ]
+}

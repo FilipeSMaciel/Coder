@@ -1,0 +1,52 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "name": "Banco de Dados",
+      "description": "Introdução ao banco de dados, SQL, ORMs",
+      "duration": "6 meses"
+    },
+    {
+      "id": 2,
+      "name": "OpenAI e humanização da inteligência artificial",
+      "description": "Inteligência artificial, Deep learning, Ciência de dados, Ciência de computação, Ciência de dados e Ciência de computação",
+      "duration": "8 meses"
+    },
+    {
+      "id": 3,
+      "name": "NextJS & VueJS",
+      "description": "Introdução ao framework NextJS e VueJS",
+      "duration": "4 meses"
+    },
+    {
+      "id": 4,
+      "name": "Nextgen:Futuro da programação",
+      "description": "Como se preparar para o futuro da programação",
+      "duration": "1 mês"
+    },
+    {
+      "id": 5,
+      "name": "HTML & CSS: Início",
+      "description": "Introdução ao HTML e CSS",
+      "duration": "3 meses"
+    },
+    {
+      "id": 6,
+      "name": "HTML & CSS: Avançado",
+      "description": "As melhores práticas para HTML e CSS, trabalhando com grid, flexbox e responsividade, outros métodos avançados de CSS",
+      "duration": "6 meses"
+    },
+    {
+      "id": 7,
+      "name": "JavaScript: Início",
+      "description": "Introdução ao JavaScript",
+      "duration": "3 meses"
+    },
+    {
+      "id": 8,
+      "name": "JavaScript: Avançado",
+      "description": "As melhores práticas para JavaScript, trabalhando com event listeners, callbacks, promises, async/await, outros métodos avançados de JavaScript",
+      "duration": "6 meses"
+    }
+  ]
+}

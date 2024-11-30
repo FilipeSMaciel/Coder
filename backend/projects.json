@@ -1,0 +1,11 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Project Coder++",
+      "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
+      "status": "Em andamento",
+      "companyId": 1
+    }
+  ]
+}
