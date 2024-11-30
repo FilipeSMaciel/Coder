@@ -1,35 +1,36 @@
+.customOverlay {
 
-.customOverlay{
+  background: rgba(187, 184, 184, 0.571)
+}
 
-   background: rgba(187, 184, 184, 0.571)
+.customModal {
+
+  background: #3C3C3C;
+  border-radius: 1rem;
 
 }
-.customModal{
 
-    background: #3C3C3C;
-    border-radius: 1rem;
-    
-}
 .react-responsive-modal-modal {
-    max-width: 100vw;
-    padding: 0;
+  max-width: 100vw;
+  padding: 0;
 }
+
 /* Define a posição inicial (fora da tela à direita) */
 .move-right {
-    transform: translateX(100%);
-  }
-  
-  /* Define a posição final (visível no centro) */
-  .move-left {
-    transform: translateX(0);
-  }
-  
-  /* Transição para suavizar o movimento */
-  .transition-transform {
-    transition: transform 1s ease-in-out;
-  }
-  .react-responsive-modal-closeButton{
-    z-index: 11;
-  }
-  
-  
+  transform: translateX(100%);
+}
+
+/* Define a posição final (visível no centro) */
+.move-left {
+  transform: translateX(0);
+}
+
+/* Transição para suavizar o movimento */
+.transition-transform {
+  transition: transform 1s ease-in-out;
+}
+
+.react-responsive-modal-closeButton {
+  z-index: 11;
+  forced-color-adjust: white;
+}
