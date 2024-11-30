@@ -98,7 +98,7 @@ export default function LoginModal({ onLogin }) {
 
         {/* Seção do conteúdo animado */}
         <div
-          className={`absolute -z-0 w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out sm:${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
+          className={`absolute -z-0 w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out sm:${isRegistering ? "translate-x-[50%] sm:mx-auto" : "translate-x-[-50%] sm:mx-auto"
             }`}
         >
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
