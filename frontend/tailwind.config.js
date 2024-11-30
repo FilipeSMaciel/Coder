@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx,html}",
   ],
   theme: {
     extend: {
@@ -33,11 +33,12 @@ export default {
       '0%': {transform: 'translateY(758px)'},
       '100%': {transform: 'translateY(0px)'},
     }},
+    keyframes: {
     animacaoBaixo: {
-      '0%': {transform: 'translateY(0px)'},
-      '100%': {transform: 'translateY(1358px)'},
+      '0%': {transform: 'translateY(150px) rotate(90deg)'},
+      '100%': {transform: 'translateY(2058px) rotate(90deg)'},
     }
-},
+}},
 
   plugins: [],
 };

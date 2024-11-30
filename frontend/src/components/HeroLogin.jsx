@@ -1,4 +1,5 @@
 import { useLocation } from "react-router-dom";
+import AnimacaoCod from "./AnimacaoCod";
 
 export default function HeroLogin() {
     const location = useLocation();
@@ -10,11 +11,13 @@ export default function HeroLogin() {
 
     return (
         <>
+         
             <section className="flex items-center justify-center drop-shadow-3xl w-[99vw] max-w-[98.9vw]">
                 {/* As divs serão ocultadas no path '/home' */}
                 {!isHomePage && <div className={leftGreen}></div>}
-
+                
                 {/* Wrapper da main div com flex e condicional para a imagem */}
+                
                 <div
                     className={
                         isHomePage
@@ -23,6 +26,7 @@ export default function HeroLogin() {
                     }
                 >
                     {/* Conteúdo principal */}
+                    
                     <div className="flex flex-col justify-center items-start lg:mx-16 p-5">
                         <h1 className="text-verde_principal font-jetbrains text-left text-[1.5rem] lg:text-[3vw] font-extralight">
                             &lt; O sistema feito para programadores em busca de um projeto novo /&gt;
@@ -41,7 +45,7 @@ export default function HeroLogin() {
                         />
                     )}
                 </div>
-
+                    
                 {!isHomePage && <div className={rightGreen}></div>}
             </section>
         </>

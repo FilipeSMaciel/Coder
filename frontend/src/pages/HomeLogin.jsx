@@ -8,6 +8,7 @@ import MonthCourses from "../components/MonthCourses";
 import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import Menu from "../components/Menu";
+import AnimacaoCod from "../components/AnimacaoCod";
 
 export default function HomeLogin() {
   const [open, setOpen] = useState(false);
@@ -19,6 +20,7 @@ export default function HomeLogin() {
 
   return (
     <>
+    <div className="hidden lg:block"><AnimacaoCod /></div>
       <Menu setOpen={setOpen} />
       <main className="flex flex-col gap-10 bg-background justify-center items-center overflow-hidden sm:pb-[6vh]">
         <HeroLogin />
