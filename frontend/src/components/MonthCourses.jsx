@@ -1,5 +1,3 @@
-import { func } from "prop-types"
-
 export default function MonthCourses() {
 
     const nextGen = "Nextgen:Futuro da programação"
