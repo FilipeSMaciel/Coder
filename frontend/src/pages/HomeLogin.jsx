@@ -20,7 +20,7 @@ export default function HomeLogin() {
   return (
     <>
       <Menu setOpen={setOpen} />
-      <main className="flex flex-col gap-10 bg-background justify-center items-center overflow-hidden">
+      <main className="flex flex-col gap-10 bg-background justify-center items-center overflow-hidden sm:pb-[6vh]">
         <HeroLogin />
         <LastProjects />
         <div className="sm:w-[76vw] h-[63rem] sm:h-[82vh] flex flex-col sm:flex-row items-center justify-between ">
