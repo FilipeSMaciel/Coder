@@ -43,9 +43,9 @@ export default function Menu({ setOpen }) {
 
   return (
     <header className="flex flex-col drop-shadow-3xl border-b-2 border-verde_principal bg-background w-full p-2 justify-center text-texto_header">
-      <div className="flex w-full items-center h-20 container sm:ml-[18rem] mx-auto justify-between sm:relative">
+      <div className="flex items-center h-20 mx-auto justify-between container">
         <img className="size-16" src="logo.png" alt="Logo Coder++" />
-        <div className="flex items-center gap-10 sm:mr-[10vw]">
+        <div className="flex items-center gap-10">
           <nav className="hidden gap-6 md:flex ">
             <Link to={homeLink}
               onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
@@ -76,11 +76,11 @@ export default function Menu({ setOpen }) {
           <LoginButton
             openLoginModal={openLoginModal}
             handleLogout={handleLogout}
-            className="ml-4 bg-bg_botao-login px-6 items-center justify-center rounded-md hover:scale-105 hover:border-neutral-700 hover:border-[0.1rem] transition-transform duration-100 ease-in-out"
+            className="mx-4 bg-bg_botao-login px-6 items-center justify-center rounded-md hover:scale-105 hover:border-neutral-700 hover:border-[0.1rem] transition-transform duration-100 ease-in-out"
           />
 
           <button
-            className="flex items-center justify-center size-10 sm:hidden"
+            className="flex items-center justify-center size-10 mr-4 sm:hidden"
             onClick={() => setShowMobileMenu(!showMobileMenu)}
           >
             <img className=" size-10" src="Database.png" alt="" />
