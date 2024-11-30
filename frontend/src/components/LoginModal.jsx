@@ -86,19 +86,19 @@ export default function LoginModal({ onLogin }) {
   };
 
   return (
-    <section className="relative -z-30 flex items-center justify-center w-[75vw] sm:w-[60vw] h-[70vh] sm:h-[70vh]">
-
+    <section className="flex items-center justify-center w-[75vw] sm:w-[60vw] h-[70vh] sm:h-[70vh]">
       <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
         {/* Imagem animada */}
         <img
           src="./telaLogin2.jpg"
           alt="Imagem abstrata da tela de Login"
-          className={`absolute z-10 w-1/2 object-cover contain-size hidden sm:flex sm:w-[30vw] sm:h-[70vh] transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[-50%]" : "translate-x-[50%]"}`}
+          className={`absolute z-10 w-1/2 object-cover contain-size hidden sm:flex sm:w-[30vw] sm:h-[70vh] transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[-50%]" : "translate-x-[50%]"
+            }`}
         />
 
         {/* Seção do conteúdo animado */}
         <div
-          className={`absolute -z-0 w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out sm:${isRegistering ? "translate-x-[50%] sm:mx-auto" : "translate-x-[-50%] sm:mx-auto"
+          className={`absolute w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
             }`}
         >
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
@@ -115,7 +115,7 @@ export default function LoginModal({ onLogin }) {
               </button>
             </div>
           ) : isRegistering ? (
-            <div className="flex w-[65vw] flex-col items-center">
+            <div className="flex flex-col items-center">
               <h1 className="text-[8vw] font-bold mb-4 text-verde_principal sm:text-[2vw]">&#123; Cadastro &#125;</h1>
               <h2 className="mb-6 text-white text-[5vw] sm:text-[1vw]">
                 Ou se preferir,{" "}
@@ -196,9 +196,8 @@ export default function LoginModal({ onLogin }) {
           )}
         </div>
       </div>
+
     </section>
-
-
   );
 }
 
