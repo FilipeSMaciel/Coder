@@ -9,19 +9,19 @@ export default function MenuProjetos() {
     };
 
     return (
-        <header>
-            <nav className="flex ">
-                <Link to={profileLink} className={`px-4 ${isActive('/profile')}`}
+        <section className="p-3">
+            <nav className="flex">
+                <Link to={profileLink} className={`px-5 ${isActive('/profile')}`}
                 >
                     Perfil
                 </Link>
 
-                <Link to={projectsLink} className={`px-4${isActive('/projects')}`}
+                <Link to={projectsLink} className={`px-5 ${isActive('/projects')}`}
                 >
                     Projetos
                 </Link>
             </nav>
-        </header>
+        </section>
     )
 }
 

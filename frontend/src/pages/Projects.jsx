@@ -5,6 +5,7 @@ import Menu from "../components/Menu";
 import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import MenuProjetos from "../components/MenuProjetos";
+import ProfileAside from "../components/ProfileAside";
 
 export default function Projects() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,10 @@ export default function Projects() {
   return (
     <>
       <Menu setOpen={setOpen} />
-        <MenuProjetos />
+      <MenuProjetos />
+
+      <ProfileAside />
+
       <Modal
         open={open}
         onClose={() => setOpen(false)}

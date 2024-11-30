@@ -13,6 +13,7 @@ export default function Menu({ setOpen }) {
   const homeLink = username && isLoggedIn ? '/home' : '/';
   const freelanceLink = username && isLoggedIn ? '/freelances' : '/';
   const projectsLink = username && isLoggedIn ? '/projects' : '/';
+  const companiesLink = username && isLoggedIn ? '/companies' : '/';
   const coursesLink = username && isLoggedIn ? '/courses' : '/';
   const profileLink = username && isLoggedIn ? '/profile' : '/';
 
@@ -64,6 +65,12 @@ export default function Menu({ setOpen }) {
               className={isActive('/projects')}
             >
               Projetos
+            </Link>
+            <Link to={companiesLink}
+              onClick={username ? () => setShowMobileMenu(false) : openLoginModal}
+              className={isActive('/companies')}
+            >
+              Empresas
             </Link>
             <Link to={coursesLink}
               onClick={username ? () => setShowMobileMenu(false) : openLoginModal}

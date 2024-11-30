@@ -92,13 +92,13 @@ export default function LoginModal({ onLogin }) {
         <img
           src="./telaLogin2.jpg"
           alt="Imagem abstrata da tela de Login"
-          className={`absolute z-10 w-1/2 object-cover contain-size hidden sm:flex sm:w-[30vw] sm:h-[70vh] transition-transform duration-1000 ease-in-out sm:${isRegistering ? "translate-x-[-50%]" : "translate-x-[50%]"
+          className={`absolute z-10 w-1/2 object-cover contain-size hidden sm:flex sm:w-[30vw] sm:h-[70vh] transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[-50%]" : "translate-x-[50%]"
             }`}
         />
 
         {/* Seção do conteúdo animado */}
         <div
-          className={`absolute w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out sm:${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
+          className={`absolute z-20 w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
             }`}
         >
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}

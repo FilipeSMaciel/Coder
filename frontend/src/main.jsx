@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import Courses from "./pages/Courses";
 import Projects from "./pages/Projects";
 import Error404 from "./pages/Error404";
+import Companies from "./pages/Companies";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,14 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <Projects />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "/companies",
+    element: (
+      <PrivateRoute>
+        <Companies />
       </PrivateRoute>
     )
   },

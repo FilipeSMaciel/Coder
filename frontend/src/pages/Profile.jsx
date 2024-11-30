@@ -16,16 +16,16 @@ export default function Profile() {
 
   return (
     <>
-    <Menu setOpen={setOpen} />
+      <Menu setOpen={setOpen} />
       <MenuProjetos />
-    <Modal
-      open={open}
-      onClose={() => setOpen(false)}
-      center
-    >
-      <LoginModal onLogin={handleLogoff} />
-    </Modal>
-    <Footer />
-  </>
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        center
+      >
+        <LoginModal onLogin={handleLogoff} />
+      </Modal>
+      <Footer />
+    </>
   );
 }

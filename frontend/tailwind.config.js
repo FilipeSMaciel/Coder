@@ -33,12 +33,11 @@ export default {
       '0%': {transform: 'translateY(758px)'},
       '100%': {transform: 'translateY(0px)'},
     }},
-    keyframes: {
-      animacaoBaixo: {
+    animacaoBaixo: {
       '0%': {transform: 'translateY(0px)'},
       '100%': {transform: 'translateY(1358px)'},
     }
-  }},
+},
 
   plugins: [],
 };

@@ -5,7 +5,7 @@ import Footer from "../components/Footer";
 import { useState } from "react";
 import Menu from "../components/Menu";
 
-export default function Freelances() {
+export default function Companies() {
     const [open, setOpen] = useState(false);
 
     const handleLogoff = (username) => {
@@ -18,16 +18,7 @@ export default function Freelances() {
             <Menu setOpen={setOpen} />
 
             <main>
-                <h1>Procure um freelance {'>>'}</h1>
-                <h2>Pesquise o projeto perfeito para vocé</h2>
-
-                <div>
-                    <p>Barra de pesquisa placeholder</p>
-                    <button>Pesquisar</button>
-                </div>
-
-                <button>Filtros</button>
-                <button>Order By</button>
+                <h1>Empresas</h1>
             </main>
 
             <Modal
