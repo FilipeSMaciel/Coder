@@ -7,7 +7,8 @@ import Footer from "../components/Footer";
 import MenuProjetos from "../components/MenuProjetos";
 import PerfilIconeEditar from "../components/PerfilIconeEditar";
 import Cards from "../components/Cards";
-
+import Information from "../components/Information";
+import AnimacaoCod from "../components/AnimacaoCod";
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
@@ -21,18 +22,51 @@ export default function Profile() {
     <>
     <div className="bg-background">
 
+   
+
       <Menu setOpen={setOpen} />
-      <div className="flex flex-row gap-6">
+         
+  
+
+      <div className="flex flex-col lg:flex-row gap-6">
         <div className="mt-12">
+       
+
 
       <PerfilIconeEditar />
 
         </div>
-      <div className="ml-[15vw] mt-[12vh] p-12 flex flex-col gap-4">
+      <div className="lg:ml-[15vw] lg:mt-[5vh] sm:mt-[18vh] p-12 flex flex-col gap-4">
+      <div className="text-4xl relative font-jetbrains text-verde_principal">
+      <h1 className="mb-2"> Último acesso </h1>
+      <div className="bg-background border-2 border-[#61B41394] opacity-20">
+
+      <hr></hr>
+      </div>
+      </div>
+
+<div>
+
       <Cards />
+      </div>
+      <div>
+        <div>
+          <h1 className="text-4xl relative font-jetbrains text-verde_principal mt-12 mb-2">Informações</h1>
+        <div className="bg-background border-2 border-[#61B41394] opacity-20">
+
+          <hr />
+        </div>
+        <div className="mt-4">
+
+      <Information />
+
+        </div>
+        
+        </div>
       </div>
 
       </div>
+</div>
       <Modal
         open={open}
         onClose={() => setOpen(false)}

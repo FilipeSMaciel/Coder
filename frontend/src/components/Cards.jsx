@@ -3,12 +3,12 @@ export default function Cards () {
 
     return (
         <>
-        <div className="w-[55vw] h-[16vh] bg-background border-4 border-[#298C00]">
-            <section className="flex flex-row p-2 pl-4">
-                <div className="w-[300px] h-[250px] object-cover">
+        <div className="lg:w-[55vw] h-[20vh] w-[85vw] bg-background border-4 border-[#298C00] drop-shadow-3xl">
+            <section className="flex flex-row p-4 lg:pl-12">
+                <div className="lg:w-[300px] lg:h-[250px] w-[100px] h-[100px] object-cover hidden lg:block">
                 <img src="/logo coca.png"></img>
                 </div>
-                <div className="flex flex-col items-center ml-28 text-[#B3B3B3] font-inter">
+                <div className="flex flex-col items-center lg:ml-28 ml-16 text-[#B3B3B3] font-inter">
                 <div>
                 <h1>NOME DO PROJETO</h1>
                 </div>
@@ -20,7 +20,7 @@ export default function Cards () {
                 <div className="flex flex-row gap-12">
 
                 <h2 className="text-sm text-nowrap text-[#298C00]">Requisitos: C#, C++, PYTHON, PHP, ORACLE, ANGULAR, JAVA</h2>
-                <picture src="" className="w-[60px] ml-4 text-[#298C00]">35</picture>
+                <picture src="" className="lg:w-[60px] ml-4 text-[#298C00]">35</picture>
 
                 </div>
                 
