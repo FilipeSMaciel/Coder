@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import PerfilIconeEditar from "../components/PerfilIconeEditar";
 import Cards from "../components/Cards";
 import Information from "../components/Information";
+import MenuProjetos from "../components/MenuProjetos";
 
 export default function Profile() {
   const [open, setOpen] = useState(false);
@@ -20,16 +21,10 @@ export default function Profile() {
     <>
       <div className="bg-background">
 
-
-
         <Menu setOpen={setOpen} />
-
-
-
+        <MenuProjetos />
         <div className="flex flex-col lg:flex-row gap-6">
           <div className="mt-12">
-
-
 
             <PerfilIconeEditar />
 

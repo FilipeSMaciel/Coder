@@ -31,7 +31,7 @@ export default function AnimacaoCod() {
     const novaFrase = gerarFraseAleatoria();
     const left = gerarPosicaoHorizontal(); // Posição horizontal gerada aleatoriamente
     setFrases(prevFrases => [
-      ...prevFrases, 
+      ...prevFrases,
       { frase: novaFrase, posicao: { left, top: '50%' } } // Posição fixa vertical no meio (50%)
     ]);
   };
