@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
-export default function AnimacaoCod() {
+export default function AnimacaoTwo() {
   // Estado para armazenar as frases
   const [frases, setFrases] = useState([]);
 
   // Array com frases alternativas
   const frasesAlternativas = [
-    "import random  numero_aleatorio",
-    "from math import pi  ",
-    "def saudacao(nome): )",
-    "import time  tempo = time.time() ')"
+    "import random numero",
+    "from math import pi ",
+    "def saudacao(nome): ",
+    "import time tempo '"
   ];
 
   // Função para gerar frase aleatória
@@ -53,7 +53,7 @@ export default function AnimacaoCod() {
     return () => {
       intervalos.forEach(id => clearInterval(id));
     };
-  }, []);
+  });
 
   return (
     <div className="relative w-full h-full">

@@ -12,14 +12,14 @@ useEffect(() => {
 }, []);
 
 const titulo = "text-verde_principal font-jetbrains sm:p-6 text-[1.5rem] sm:text-[2.3vw] font-light";
-const cursosItem = "w-[18rem] sm:w-[30vw] sm:h-26 text-wrap capitalize p-2 text-verde_principal border-[0.2rem] border-background font-jetbrains text-center text-[1rem] sm:text-[1.2vw] font-extralight hover:border-texto_header hover:bg-neutral-600/20 hover:scale-x-105";
+const cursosItem = "w-[18rem] sm:w-[32vw] sm:h-[20vh] text-wrap capitalize p-2 text-verde_principal border-[0.2rem] border-background font-jetbrains text-center text-[1rem] sm:text-[1.1vw] hover:sm:text-[1vw] font-extralight hover:border-texto_header hover:bg-neutral-600/20 hover:scale-x-105";
 
 function limitarCarac(string, maxCaracteres) {
     return string.length > maxCaracteres ? string.substring(0, maxCaracteres) + "..." : string;
 }
 
 return (
-    <section className="w-[90vw] sm:w-[34vw] h-[30rem] sm:h-[80vh] flex flex-col justify-around items-center gap-3 bg-bg_botao-login p-8 drop-shadow-3xl mb-20px">
+    <section className="w-[90vw] sm:w-[34vw] h-full sm:h-full flex flex-col justify-around items-center gap-3 bg-bg_botao-login p-8 drop-shadow-3xl mb-20px">
         <h2 className={titulo}>&lt; Cursos do Mês /&gt;</h2>
 
         {courses.map(course => (

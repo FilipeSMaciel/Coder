@@ -9,7 +9,7 @@ export default function HeroLogout() {
                 {/* Seção principal com a logo */}
                 <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[60vh] sm:pt-20 lg:">
                     <img
-                        className="w-[16rem] mt-16 mb-20 lg:w-[30rem] lg:mt-[2rem]"
+                        className="w-[16rem] mt-16 mb-20 lg:w-[22rem] lg:mt-[-2rem]"
                         src="./coderforfree.png"
                         alt="Coder++ Logo completo"
                     />
@@ -30,8 +30,8 @@ export default function HeroLogout() {
                     />
 
                     {/* Bloco de informações */}
-                    <div className="w-[80vw] lg:w-[35vw] h-[34vh] lg:h-[22rem] p-10 flex flex-col items-center justify-evenly bg-bg_botao-login border-t-[0.1rem] border-verde_principal">
-                        <h4 className="w-[18rem] lg:w-[30vw] font-jetbrains text-[1.8rem] lg:text-[2.3rem] text-verde_principal">
+                    <div className="w-[80vw] lg:w-[35vw] h-[35vh] lg:h-[22rem] p-10 flex flex-col items-center justify-evenly bg-bg_botao-login border-t-[0.1rem] border-verde_principal -mt-12 ">
+                        <h4 className="w-[18rem] lg:w-[30vw] ml-4 lg:ml-0 font-jetbrains text-[1.8rem] lg:text-[2.3rem] text-verde_principal">
                             # Fácil, prático e veloz &#123;
                         </h4>
                         <p className="w-[16rem] lg:w-[30vw] font-jetbrains font-extralight text-[1rem] lg:text-[1.5vw] text-verde_botao">

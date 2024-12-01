@@ -57,12 +57,12 @@ export default function Freelances() {
                             <a className="text-verde_principal underline text-[3vw] sm:hidden" href="#">Saiba Mais...</a>
 
                         </div>
-                        
-                            <div className="flex gap-1 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
-                                <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
-                                <p className="text-verde_principal font-extralight">15</p>
-                                <a className="hidden text-verde_principal underline text-[1vw]" href="#">Saiba Mais...</a>
-                            </div>
+
+                        <div className="flex gap-1 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
+                            <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
+                            <p className="text-verde_principal font-extralight">15</p>
+                            <a className="hidden text-verde_principal underline text-[1vw]" href="#">Saiba Mais...</a>
+                        </div>
                     </div>
                 </section>
 
