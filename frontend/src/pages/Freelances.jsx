@@ -17,24 +17,37 @@ export default function Freelances() {
 
     const iconProject = "size-[20vw] p-2 px-[0.09rem]  ";
     const projectDesc = "flex flex-col gap-2 text-center"
+    const filtrosBotton = "bg-[#1E1E1E] uppercase border-[2px] px-[1vw] border-black drop-shadow-x2l text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]"
 
 
     return (
         <div className="bg-background">
             <Menu setOpen={setOpen} />
 
-            <main>
-                <section>
-                    <h1>Procure um freelance {'>>'}</h1>
-                    <h2>Pesquise o projeto perfeito para vocé</h2>
+            <main className="font-jetbrains">
+                <section className="h-[25vh] sm:h-[45vh] bg-bg_botao-login flex flex-col items-center justify-center gap-[1vh] sm:gap-[2vh]  border-b-verde_principal border-[0.1vh]">
+                    <h1 className="text-[6vw] sm:text-[3vw] tracking-widest text-verde_principal">Procure um freelance {'>>'}</h1>
+                    <h2 className="text-verde_botao text-[4vw] sm:text-[1.6vw] py-2">Pesquise o projeto perfeito para você</h2>
 
-                    <div>
-                        <p>Barra de pesquisa placeholder</p>
-                        <button>Pesquisar</button>
+                    <div className="flex items-center gap-3  sm:gap-[6v] ml-[12.2vw]">
+                        <div className="flex flex-col">
+                            <label htmlFor="search"></label>
+                            <input className="rounded-[3px] sm:w-[40vw] sm:py-[1vh]" type="text" />
+                        </div>
+
+                        <div className="bg">
+                        <button className="hidden sm:flex sm:py-[0.8vh] bg-[#1E1E1E] uppercase border-[2px] px-[1vw] rounded-[0.5rem] border-black drop-shadow-2xl text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]">Pesquisar</button>
+                        </div>
+
+                        <button className="bg-background p-1 rounded-full border border-black sm:hidden">
+                            <img src="./Search.svg" alt="" />
+                        </button>
                     </div>
 
-                    <button>Filtros</button>
-                    <button>Order By</button>
+                    <div className="flex gap-[10vw] mt-[1.5vh]">
+                        <button className={filtrosBotton}>Filtros →</button>
+                        <button className={filtrosBotton}>Order By ↓</button>
+                    </div>
                 </section>
 
                 <section>
@@ -57,12 +70,12 @@ export default function Freelances() {
                             <a className="text-verde_principal underline text-[3vw] sm:hidden" href="#">Saiba Mais...</a>
 
                         </div>
-                        
-                            <div className="flex gap-1 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
-                                <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
-                                <p className="text-verde_principal font-extralight">15</p>
-                                <a className="hidden text-verde_principal underline text-[1vw]" href="#">Saiba Mais...</a>
-                            </div>
+
+                        <div className="flex gap-1 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
+                            <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
+                            <p className="text-verde_principal font-extralight">15</p>
+                            <a className="hidden text-verde_principal underline text-[1vw]" href="#">Saiba Mais...</a>
+                        </div>
                     </div>
                 </section>
 
