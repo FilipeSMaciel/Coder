@@ -25,7 +25,7 @@ export default function HomeLogin() {
       <main className="flex flex-col gap-10 bg-background justify-center items-center overflow-hidden sm:pb-[6vh]">
         <HeroLogin />
         <LastProjects />
-        <div className="sm:w-[76vw] h-[63rem] my-20 sm:h-[90vh] flex flex-col sm:flex-row items-center justify-between ">
+        <div className="sm:w-[76vw] h-[63rem] my-20 sm:h-[90vh] mb-32 lg:mb-0 flex flex-col sm:flex-row items-center justify-between ">
           <MonthCourses />
           <MainProjects />
         </div>

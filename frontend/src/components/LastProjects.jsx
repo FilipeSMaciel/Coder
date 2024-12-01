@@ -16,7 +16,7 @@ export default function LastProjects() {
     const lastProjectDiv = "flex items-center";
 
     return (
-        <section className="bg-bg_botao-login flex flex-col items-center justify-center gap-8 sm:gap-[5rem] py-[2rem] drop-shadow-3xl w-[90vw] sm:w-[76vw] sm:h-[28rem] border-t-[0.1rem] border-verde_principal">
+        <section className="bg-bg_botao-login flex flex-col items-center justify-center gap-8 sm:gap-[5rem] py-[2rem] drop-shadow-3xl w-[90vw] sm:w-[76vw] sm:h-[28rem] border-t-[0.1rem] border-verde_principal -mb-20 lg:-mb-0">
             <h2 className="w-[20rem] sm:w-[60rem] text-verde_principal font-jetbrains text-center text-[1.5rem] sm:text-[3vw] font-extralight">Projetos mais recentes &gt;&gt;&gt;&gt;</h2>
 
             <div className="flex justify-evenly gap-10">
