@@ -9,6 +9,7 @@ import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import Menu from "../components/Menu";
 import AnimacaoCod from "../components/AnimacaoCod";
+import AnimacaoCod2 from "../components/AnimacaoCod2";
 
 export default function HomeLogin() {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function HomeLogin() {
 
   return (
     <>
-    <div className="hidden lg:block"><AnimacaoCod /></div>
+    <div className="hidden lg:block"><AnimacaoCod2 /></div>
       <Menu setOpen={setOpen} />
       <main className="flex flex-col gap-10 bg-background justify-center items-center overflow-hidden sm:pb-[6vh]">
         <HeroLogin />

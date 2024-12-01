@@ -32,8 +32,8 @@ export default {
   },
   keyframes: {
     animacaoCima: { 
-      '0%': {transform: 'translateY(758px)'},
-      '100%': {transform: 'translateY(0px)'},
+      '0%': {transform: 'translateY(150px) rotate(90deg)'},
+      '100%': {transform: 'translateY(1358px) rotate(90deg)'},
     }},
     keyframes: {
     animacaoBaixo: {

@@ -19,7 +19,7 @@ function limitarCarac(string, maxCaracteres) {
 }
 
 return (
-    <section className="w-[90vw] sm:w-[34vw] h-[30rem] sm:h-[80vh] flex flex-col justify-around items-center gap-3 bg-bg_botao-login p-8 drop-shadow-3xl mb-10px">
+    <section className="w-[90vw] sm:w-[34vw] h-[30rem] sm:h-[80vh] flex flex-col justify-around items-center gap-3 bg-bg_botao-login p-8 drop-shadow-3xl mb-20px">
         <h2 className={titulo}>&lt; Cursos do Mês /&gt;</h2>
 
         {courses.map(course => (
