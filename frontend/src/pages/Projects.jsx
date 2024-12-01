@@ -5,16 +5,19 @@ import Menu from "../components/Menu";
 import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import MenuProjetos from "../components/MenuProjetos";
-import PerfilIconeEditarTwo from "../components/PerfilIconeEditarTwo";
+// import PerfilIconeEditarTwo from "../components/PerfilIconeEditarTwo";
 import PesquisaProjects from "../components/PesquisaProjects";
 import CardsTwo from "../components/CardsTwo";
 import ProjectModal from "../components/ProjectModal";
+import PerfilIconeEditar from "../components/PerfilIconeEditar";
 
 export default function Projects() {
   const [open, setOpen] = useState(false);
   const [openProject, setOpenProject] = useState(false);
 
   const handleAddProject = (project) => {
+    console.log('Adding project:', project);
+
     
   };
 
@@ -33,7 +36,7 @@ export default function Projects() {
         </div>
         <div className="flex flex-col lg:flex-row gap-[18.5vw] ml-12 -mt-[3.5vw]">
           <div className="hidden lg:block p-1">
-            <PerfilIconeEditarTwo />
+            <PerfilIconeEditar />
           </div>
           <div className="-ml-[2vw] mt-12 lg:hidden">
             <PesquisaProjects setOpenProject={setOpenProject} />

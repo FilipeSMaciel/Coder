@@ -1,15 +1,25 @@
 {
   "users": [
     {
-      "id": "1",
+      "id": 1,
       "username": "Admin",
-      "texto": "Programador realizando tarefas especiais todos os dias: \n\nLembrar de entrar no grupo do discord da Coca-cola."
+      "password": "senha",
+      "email": "admin@email.com",
+      "description": "Eu sou o Admin."
     },
     {
       "id": "a85f",
       "username": "Felipe Ribeiro",
       "password": "123",
-      "email": "teste@gmail.com"
+      "email": "teste@gmail.com",
+      "description": ""
+    },
+    {
+      "id": "38fd",
+      "username": "Pedro",
+      "password": "123",
+      "email": "pedro@email.com",
+      "description": "Eu sou o Pedro hehe"
     }
   ]
 }
