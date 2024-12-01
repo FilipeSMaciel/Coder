@@ -45,7 +45,7 @@ export default function Menu({ setOpen }) {
   return (
     <header className="flex flex-col drop-shadow-3xl border-b-2 border-verde_principal bg-background w-full p-2 justify-center text-texto_header">
       <div className="flex items-center h-20 mx-auto justify-between container">
-        <img className="size-16" src="logo.png" alt="Logo Coder++" />
+        <a href="/home"><img className="size-16" src="logo.png" alt="Logo Coder++" /> </a>
         <div className="flex items-center gap-10">
           <nav className="hidden gap-6 md:flex ">
             <Link to={homeLink}
