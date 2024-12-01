@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Freelance Coder++",
-      "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
+      "image": "https://i.postimg.cc/MGDgSkGr/image.png",
       "description": "Desenvolvimento de um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
       "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
       "status": "Em andamento",
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "name": "Freelance Google Plus",
-      "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Plus_logo_%282015-2019%29.svg/640px-Google_Plus_logo_%282015-2019%29.svg.png",
       "description": "Desenvolvimento de um sistema de streaming para a Google",
       "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
       "status": "Em andamento",
