@@ -8,9 +8,15 @@ import MenuProjetos from "../components/MenuProjetos";
 import PerfilIconeEditarTwo from "../components/PerfilIconeEditarTwo";
 import PesquisaProjects from "../components/PesquisaProjects";
 import CardsTwo from "../components/CardsTwo";
+import ProjectModal from "../components/ProjectModal";
 
 export default function Projects() {
   const [open, setOpen] = useState(false);
+  const [openProject, setOpenProject] = useState(false);
+
+  const handleAddProject = (project) => {
+    
+  };
 
   const handleLogoff = (username) => {
     localStorage.setItem("username", username);
@@ -23,21 +29,17 @@ export default function Projects() {
         <Menu setOpen={setOpen} />
         <MenuProjetos />
         <div className="ml-[43vw] mt-12 hidden lg:block mb-8">
-
-          <PesquisaProjects />
+          <PesquisaProjects setOpenProject={setOpenProject} />
         </div>
         <div className="flex flex-col lg:flex-row gap-[18.5vw] ml-12 -mt-[3.5vw]">
           <div className="hidden lg:block p-1">
-
             <PerfilIconeEditarTwo />
           </div>
-          {/* [<ProfileAside />] */}
-          <div className="-ml-[2vw] mt-12  lg:hidden">
-
-            <PesquisaProjects />
+          <div className="-ml-[2vw] mt-12 lg:hidden">
+            <PesquisaProjects setOpenProject={setOpenProject} />
           </div>
           <div className="flex flex-col gap-10 mb-10">
-            <img src="linhagrande.png" className="mr-10 lg:mr-0 lg:mt-12"></img >
+            <img src="linhagrande.png" className="mr-10 lg:mr-0 lg:mt-12"></img>
             <CardsTwo />
             <img src="linhagrande.png" className="mr-10 lg:mr-0"></img>
             <CardsTwo />
@@ -45,12 +47,15 @@ export default function Projects() {
             <CardsTwo />
           </div>
         </div>
-        <Modal
-          open={open}
-          onClose={() => setOpen(false)}
-          center
-        >
+
+        {/* Modal de Login */}
+        <Modal open={open} onClose={() => setOpen(false)} center>
           <LoginModal onLogin={handleLogoff} />
+        </Modal>
+
+        {/* Modal de Novo Projeto */}
+        <Modal open={openProject} onClose={() => setOpenProject(false)} center>
+          <ProjectModal open={openProject} setOpen={setOpenProject} onAddProject={handleAddProject} />
         </Modal>
       </div>
       <Footer />
