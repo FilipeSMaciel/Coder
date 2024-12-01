@@ -16,7 +16,7 @@ export default function Freelances() {
 
     useEffect(() => {
         // Fetching data from the API
-        fetch('http://localhost:3004/freelances')
+        fetch('http://localhost:3001/projects')
             .then(response => response.json())
             .then(data => {
                 setFreelances(data);
