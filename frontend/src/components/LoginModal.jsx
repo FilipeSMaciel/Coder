@@ -87,7 +87,7 @@ export default function LoginModal({ onLogin }) {
 
   return (
     <section className="flex items-center justify-center w-[75vw] sm:w-[60vw] h-[70vh] sm:h-[70vh]">
-      <div className="relative w-full h-full overflow-hidden flex justify-center items-center">
+      <div className="relative w-full h-full overflow-hidden flex justify-center items-center m-auto">
         {/* Imagem animada */}
         <img
           src="./telaLogin2.jpg"
@@ -98,7 +98,7 @@ export default function LoginModal({ onLogin }) {
 
         {/* Seção do conteúdo animado */}
         <div
-          className={`absolute  w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
+          className={`absolute w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
             }`}
         >
           {errorMessage && <p className="text-red-500">{errorMessage}</p>}
@@ -115,7 +115,7 @@ export default function LoginModal({ onLogin }) {
               </button>
             </div>
           ) : isRegistering ? (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center justify-center mr-[9rem] sm:m-auto">
               <h1 className="text-[8vw] font-bold mb-4 text-verde_principal sm:text-[2vw]">&#123; Cadastro &#125;</h1>
               <h2 className="mb-6 text-white text-[5vw] sm:text-[1vw]">
                 Ou se preferir,{" "}
@@ -130,21 +130,21 @@ export default function LoginModal({ onLogin }) {
                 <input
                   type="text"
                   placeholder="Nome de usuário"
-                  className="border border-gray-300 rounded-md p-2 w-full sm:w-[20vw]"
+                  className="border border-gray-300 rounded-md p-2 sm:w-[20vw]"
                   required
                   {...register("username")}
                 />
                 <input
                   type="password"
                   placeholder="Senha"
-                  className="border border-gray-300 rounded-md p-2 w-full sm:w-[20vw]"
+                  className="border border-gray-300 rounded-md p-2 sm:w-[20vw]"
                   required
                   {...register("password")}
                 />
                 <input
                   type="email"
                   placeholder="Email"
-                  className="border border-gray-300 rounded-md p-2 w-full sm:w-[20vw]"
+                  className="border border-gray-300 rounded-md p-2 sm:w-[20vw]"
                   required
                   {...register("email")}
                 />
@@ -157,7 +157,7 @@ export default function LoginModal({ onLogin }) {
               </form>
             </div>
           ) : (
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center ml-[10rem] sm:m-auto">
               <h1 className="text-[8vw] font-bold mb-4 text-verde_principal sm:text-[2vw]">&#123; Login &#125;</h1>
               <h2 className="mb-6 text-white text-[5vw] sm:text-[1vw]">
                 Ou se preferir,{" "}
