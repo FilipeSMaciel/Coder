@@ -8,7 +8,6 @@ import MonthCourses from "../components/MonthCourses";
 import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import Menu from "../components/Menu";
-import AnimacaoCod from "../components/AnimacaoCod";
 import AnimacaoCod2 from "../components/AnimacaoCod2";
 
 export default function HomeLogin() {
