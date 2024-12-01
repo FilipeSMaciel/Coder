@@ -6,10 +6,10 @@ export default function AnimacaoCod() {
 
   // Array com frases alternativas
   const frasesAlternativas = [
-    "import random  numero_aleatorio",
-    "from math import pi  ",
-    "def saudacao(nome): )",
-    "import time  tempo = time.time() ')"
+    "import random numero",
+    "from math import pi ",
+    "def saudacao(nome): ",
+    "import time tempo '"
   ];
 
   // Função para gerar frase aleatória

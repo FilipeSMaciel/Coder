@@ -33,14 +33,14 @@ export default {
   keyframes: {
     animacaoCima: { 
       '0%': {transform: 'translateY(150px) rotate(90deg)'},
-      '100%': {transform: 'translateY(1358px) rotate(90deg)'},
-    }},
+      '100%': {transform: 'translateY(1500px) rotate(90deg)'},
+    },
     keyframes: {
     animacaoBaixo: {
       '0%': {transform: 'translateY(150px) rotate(90deg)'},
-      '100%': {transform: 'translateY(1458px) rotate(90deg)'},
+      '100%': {transform: 'translateY(1350px) rotate(90deg)'},
     }
-}},
+}}},
 
   plugins: [require('tailwindcss-font-inter')],
 };
