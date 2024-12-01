@@ -21,7 +21,7 @@ export default function MainProjects() {
 
     return (
         <div className="pb-6 sm:pb-0">
-            <section className="w-[90vw] sm:w-[34vw] h-[30rem] sm:h-[80vh] flex flex-col justify-start items-center gap-3 bg-bg_botao-login p-8 drop-shadow-3xl">
+            <section className="w-[90vw] sm:w-[34vw] h-[30rem] sm:h-full flex flex-col justify-start items-center gap-3 bg-bg_botao-login p-8 drop-shadow-3xl">
                 <h2 className={titulo}>&#123; Projetos em destaque &#125;</h2>
 
                 {projects.map(project => (
