@@ -31,17 +31,17 @@ export default function Projects() {
       <div className="bg-background">
         <Menu setOpen={setOpen} />
         <MenuProjetos />
-        <div className="ml-[43vw] mt-12 hidden lg:block mb-8">
+        <div className="ml-[45vw] mt-12 hidden lg:block mb-8">
           <PesquisaProjects setOpenProject={setOpenProject} />
         </div>
-        <div className="flex flex-col lg:flex-row gap-[18.5vw] ml-12 -mt-[3.5vw]">
+        <div className="flex flex-col lg:flex-row 2xl:ml-[3.55vw] 2xl:mt-[-2.56vw] lg:gap-[20vw] ml-12 -mt-[3.5vw]">
           <div className="hidden lg:block p-1">
             <PerfilIconeEditar />
           </div>
           <div className="-ml-[2vw] mt-12 lg:hidden">
             <PesquisaProjects setOpenProject={setOpenProject} />
           </div>
-          <div className="flex flex-col gap-10 mb-10">
+          <div className="flex flex-col gap-10 mb-10 2xl:ml-[-0.8vw]">
             <img src="linhagrande.png" className="mr-10 lg:mr-0 lg:mt-12"></img>
             <CardsTwo />
             <img src="linhagrande.png" className="mr-10 lg:mr-0"></img>
@@ -57,7 +57,10 @@ export default function Projects() {
         </Modal>
 
         {/* Modal de Novo Projeto */}
-        <Modal open={openProject} onClose={() => setOpenProject(false)} center>
+        <Modal open={openProject} onClose={() => setOpenProject(false)} center classNames={{
+          overlay: 'customOverlay',
+          modal: 'customModal',
+        }}>
           <ProjectModal open={openProject} setOpen={setOpenProject} onAddProject={handleAddProject} />
         </Modal>
       </div>

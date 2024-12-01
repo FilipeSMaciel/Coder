@@ -3,7 +3,7 @@ export default function Cards() {
 
     return (
         <>
-            <div className="lg:w-[50vw] lg:h-[20vh] h-[12vh] w-[77.5vw] bg-[#2C2C2C] border-4 border-[#298C00] drop-shadow-3xl">
+            <div className="lg:w-[50vw] lg:h-[20vh] h-[12vh] w-[77.5vw] bg-[#2C2C2C] border-[0.1vw] border-[#298C00] drop-shadow-3xl">
                 <section className="flex flex-row p-4 lg:pl-10 lg:p-3">
                     <div className="lg:w-[300px] lg:h-[250px] w-[100px] h-[100px] object-cover hidden lg:block">
                         <img src="/coca-cola.svg"></img>
