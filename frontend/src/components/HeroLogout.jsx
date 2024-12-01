@@ -7,7 +7,7 @@ export default function HeroLogout() {
         <div className="hidden lg:block"><AnimacaoCod /></div>
             <section className="flex flex-col items-center relative">
                 {/* Seção principal com a logo */}
-                <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[89.7vh] sm:pt-20 lg:">
+                <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[60vh] sm:pt-20 lg:">
                     <img
                         className="w-[16rem] mt-16 mb-20 lg:w-[30rem] lg:mt-[2rem]"
                         src="./coderforfree.png"
