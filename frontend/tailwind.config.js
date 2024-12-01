@@ -32,15 +32,15 @@ export default {
   },
   keyframes: {
     animacaoCima: { 
-      '0%': {transform: 'translateY(150px) rotate(90deg)'},
-      '100%': {transform: 'translateY(1500px) rotate(90deg)'},
-    },
-    keyframes: {
+      '0%': {transform: 'translateY(10vh) rotate(90deg)'},
+      '100%': {transform: 'translateY(260vh) rotate(90deg)'},
+    }},
+  keyframes: {
     animacaoBaixo: {
-      '0%': {transform: 'translateY(150px) rotate(90deg)'},
-      '100%': {transform: 'translateY(1350px) rotate(90deg)'},
+      '0%': {transform: 'translateY(10vh) rotate(90deg)'},
+      '100%': {transform: 'translateY(229vh) rotate(90deg)'},
     }
-}}},
+}},
 
   plugins: [require('tailwindcss-font-inter')],
 };

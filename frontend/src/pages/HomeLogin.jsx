@@ -9,7 +9,6 @@ import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import Menu from "../components/Menu";
 import AnimacaoTwo from "../components/AnimacaoTwo";
-import AnimacaoCod from "../components/AnimacaoCod";
 
 export default function HomeLogin() {
   const [open, setOpen] = useState(false);
@@ -21,12 +20,12 @@ export default function HomeLogin() {
 
   return (
     <>
-    <div className="hidden lg:block"><AnimacaoTwo/></div>
+    <div className="hidden lg:block"><AnimacaoTwo /></div>
       <Menu setOpen={setOpen} />
       <main className="flex flex-col gap-10 bg-background justify-center items-center overflow-hidden sm:pb-[6vh]">
         <HeroLogin />
         <LastProjects />
-        <div className="sm:w-[76vw] h-[63rem] my-20 sm:h-[90vh] flex flex-col sm:flex-row items-center justify-between ">
+        <div className="sm:w-[76vw] h-[63rem] my-20 sm:h-[90vh] mb-32 lg:mb-0 flex flex-col sm:flex-row items-center justify-between ">
           <MonthCourses />
           <MainProjects />
         </div>

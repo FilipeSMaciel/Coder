@@ -9,7 +9,7 @@ export default function HeroLogout() {
                 {/* Seção principal com a logo */}
                 <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[60vh] sm:pt-20 lg:">
                     <img
-                        className="w-[16rem] mt-16 mb-20 lg:w-[22rem] lg:mt-[-2rem]"
+                        className="w-[16rem] mt-16 mb-20 lg:w-[36.5rem] lg:mt-[-2rem]"
                         src="./coderforfree.png"
                         alt="Coder++ Logo completo"
                     />
