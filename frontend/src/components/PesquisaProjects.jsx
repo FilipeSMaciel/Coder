@@ -10,16 +10,21 @@ export default function PesquisaProjects({ setOpenProject }) {
 
     return (
         <>
-            <div className="flex flex-row gap-2 mb-2">
-                <section className="flex flex-col lg:flex-row gap-2 justify-around">
-                    <div className="mt-1 2xl:-ml-[3vw] lg:ml-1.5 border-2 border-[#767676] lg:h-[2vw] 2xl:h-[3.1vh] w-[80vw] 2xl:w-[19.5vw] lg:w-[22.75vw] ml-0.5">
+            <div className="flex flex-row gap-2 mb-2 ">
+                <section className="flex flex-col lg:flex-row gap-2">
+                    <div className="relative w-full sm:w-[60vw] md:w-[40vw] lg:w-[22.75vw] mt-1">
                         <input
                             type="text"
-                            size={36}
-                            name="Pesquise pelo projeto"
-                            placeholder="Procure seu projeto.."
-                            id="Pesquise pelo projeto"
-                            className="bg-background pl-2 opacity-4 text-white"
+                            placeholder="Procure seu projeto..."
+                            id="searchProject"
+                            className="
+      w-full h-full
+      bg-background text-white placeholder-gray-400
+      border-2 border-[#767676] rounded-md
+      py-2 px-3
+      text-sm lg:text-base
+      focus:outline-none focus:ring-2 focus:ring-verde_principal focus:border-verde_principal
+    "
                         />
                     </div>
                     <div className="flex flex-row lg:gap-2 gap-4">
