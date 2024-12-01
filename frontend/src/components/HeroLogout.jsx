@@ -7,9 +7,9 @@ export default function HeroLogout() {
         <div className="hidden lg:block"><AnimacaoCod /></div>
             <section className="flex flex-col items-center relative">
                 {/* Seção principal com a logo */}
-                <div className="flex flex-col items-center w-full bg-bg_botao-login lg:h-[60vh] sm:pt-20 lg:">
+                <div className="flex flex-col items-center justify-center w-full bg-bg_botao-login lg:h-[90vh] sm:pt-20 lg:">
                     <img
-                        className="w-[16rem] mt-16 mb-20 lg:w-[36.5rem] lg:mt-[-2rem]"
+                        className="w-[40.5vw] mt-16 mb-20 sm:mt-[-2vh]"
                         src="./coderforfree.png"
                         alt="Coder++ Logo completo"
                     />
@@ -21,7 +21,7 @@ export default function HeroLogout() {
 
             {/* Segunda seção com conteúdo adicional */}
             <section className="sm:w-[90vw] flex justify-evenly items-center mt-16 lg:h-[60vh] drop-shadow-3xl pb-16 sm:ml-[4vw] lg:pb-[12rem] lg:mt-[10rem]">
-                <div className="flex justify-around mx-9 items-center mt-16 lg:h-[35rem] drop-shadow-3xl">
+                <div className="flex justify-around mx-9 items-center mt-16 lg:h-[35vh] drop-shadow-3xl">
                     {/* Imagem exibida apenas em telas grandes */}
                     <img
                         className="hidden lg:flex lg:w-[30vw] sm:p-12"
