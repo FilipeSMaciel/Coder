@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import AnimacaoCod from "./AnimacaoCod";
+
 
 export default function HeroLogin() {
     const location = useLocation();

@@ -8,7 +8,7 @@ export default function Information() {
         <>
             <div className="">
                 <section>
-                    <div className="border-2 border-verde_principal lg:w-[50vw] w-[77.5vw] h-[500px] drop-shadow-3xl bg-[#2C2C2C]">
+                    <div className="border-2 border-verde_principal lg:w-[50vw] w-[77.5vw] lg:h-[500px] h-[52vh] drop-shadow-3xl bg-[#2C2C2C]">
                     <div className="flex flex-row lg:ml-[1vw] ml-[4vw]">
                     <h1 className={textosDados}>E-mail cadastrado:</h1>
                         <p className={visualizaDados}></p>
