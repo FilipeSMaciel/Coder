@@ -28,8 +28,9 @@ export default function HomeLogout() {
                 classNames={{
                     overlay: 'customOverlay', 
                     modal: 'customModal'
-
+                    
                 }}
+                className="drop-shadow-3xl"
             >
                 <LoginModal onLogin={handleLogin} />
 
