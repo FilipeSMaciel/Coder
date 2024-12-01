@@ -20,6 +20,12 @@
       "password": "123",
       "email": "pedro@email.com",
       "description": "Eu sou o Pedro hehe"
+    },
+    {
+      "id": "41c4",
+      "username": "Felipe",
+      "password": "teste",
+      "email": "teste@gmail.com"
     }
   ]
 }

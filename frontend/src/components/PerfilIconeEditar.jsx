@@ -83,19 +83,19 @@ const handleSave = async () => {
 };
 
 return (
-    <div className="flex flex-col mb-8 lg:mb-[38vw] lg:ml-[2vw] sm:ml-28 -mt-2">
+    <div className="flex flex-col mb-[60vw] lg:mb-[38vw] lg:ml-[2vw] sm:ml-28 -mt-2">
         <section className="lg:w-[14rem] lg:h-[14rem] w-[80vw] h-[33vh] bg-slate-500 rounded-full border border-black z-20 relative ml-10 mb-16">
             <div className="flex flex-col items-center lg:mt-[15rem] sm:ml-[18vw] lg:ml-[-10vw] sm:mt-[20rem] sm:relative">
                 <p className="text-verde_principal font-jetbrains tracking-widest text-nowrap text-3xl lg:mt-[1vw] lg:ml-[4vw] mb-6 absolute z-20 mt-[75vw] sm:ml-[-20vw]">
                     {username}
                 </p>
                 <button 
-                    className="bg-[#1E1E1E] border-3 border-black drop-shadow-3xl text-lg text-verde_principal font-jetbrains tracking-widest text-nowrap sm:w-[18vw] sm:h-[8vh] w-[10vw] h-[1vw] rounded mt-[5.7vw] ml-[12vw]"
+                    className="bg-[#1E1E1E] border-3 border-black drop-shadow-3xl text-lg text-verde_principal font-jetbrains tracking-widest text-nowrap sm:w-[18vw]  mt-[90vw] sm:h-[8vh] w-[48vw] h-[12vw] lg:w-[18vw] lg:h-[4vw] rounded lg:mt-[5.7vw] lg:ml-[12vw]"
                     onClick={handleSave}
                 >
                     Salvar
                 </button>
-                <div className="bg-[#2C2C2C] w-[25vw] border border-[#298C00] h-[23.5vw] ml-[19.5vw] mt-4">
+                <div className="bg-[#2C2C2C] w-[80vw] h-[50vw] lg:w-[25vw] border border-[#298C00] lg:h-[23.5vw] lg:ml-[19.5vw]  mt-[4vw] lg:mt-4">
                     <textarea
                         className="w-full h-full bg-transparent border-none text-verde_principal text-lg p-2 resize-none focus:outline-none"
                         placeholder="Digite seu texto aqui..."
