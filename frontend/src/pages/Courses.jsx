@@ -18,7 +18,7 @@ export default function Courses() {
     <>
     
     <Menu setOpen={setOpen} />
-    <div className="bg-[#B3B3B3] w-full h-[50vw]">
+    <div className="bg-[#B3B3B3] w-full h-[116vw] lg:h-[50vw]">
 
         
     <Ops />
