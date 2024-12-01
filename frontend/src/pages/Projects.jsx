@@ -5,9 +5,7 @@ import Menu from "../components/Menu";
 import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import MenuProjetos from "../components/MenuProjetos";
-import ProfileAside from "../components/ProfileAside";
 import PerfilIconeEditar from "../components/PerfilIconeEditar";
-import Cards from "../components/Cards";
 import PesquisaProjects from "../components/PesquisaProjects";
 import CardsTwo from "../components/CardsTwo";
 
