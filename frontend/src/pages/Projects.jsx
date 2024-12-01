@@ -6,7 +6,7 @@ import LoginModal from "../components/LoginModal";
 import { useState } from "react";
 import MenuProjetos from "../components/MenuProjetos";
 import ProfileAside from "../components/ProfileAside";
-import PerfilIconeEditar from "../components/PerfilIconeEditar";
+import PerfilIconeEditarTwo from "../components/PerfilIconeEditarTwo";
 import Cards from "../components/Cards";
 import PesquisaProjects from "../components/PesquisaProjects";
 import CardsTwo from "../components/CardsTwo";
@@ -28,10 +28,10 @@ export default function Projects() {
 
       <PesquisaProjects />
       </div>
-<div className="flex flex-col lg:flex-row gap-[18.5vw] ml-12">
-  <div className="hidden lg:block">
+<div className="flex flex-col lg:flex-row gap-[18.5vw] ml-12 -mt-[3.5vw]">
+  <div className="hidden lg:block p-1">
 
-      <PerfilIconeEditar/>
+      <PerfilIconeEditarTwo/>
   </div>
       {/* [<ProfileAside />] */}
       <div className="-ml-[2vw] mt-12  lg:hidden">
@@ -39,7 +39,7 @@ export default function Projects() {
       <PesquisaProjects />
       </div>
 <div className="flex flex-col gap-10 mb-10">
-<img src="linhagrande.png" className="mr-10 lg:mr-0"></img >
+<img src="linhagrande.png" className="mr-10 lg:mr-0 lg:mt-12"></img >
       <CardsTwo/>
       <img src="linhagrande.png" className="mr-10 lg:mr-0"></img>
       <CardsTwo/>

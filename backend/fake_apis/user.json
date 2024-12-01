@@ -1,10 +1,15 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Admin",
-      "password": "senha",
-      "email": "admin@email.com.br"
+      "texto": "Programador realizando tarefas especiais todos os dias: \n\nLembrar de entrar no grupo do discord da Coca-cola."
+    },
+    {
+      "id": "a85f",
+      "username": "Felipe Ribeiro",
+      "password": "123",
+      "email": "teste@gmail.com"
     }
   ]
 }

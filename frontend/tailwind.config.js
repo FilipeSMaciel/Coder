@@ -3,7 +3,6 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,html}",
-    
   ],
   theme: {
     extend: {
@@ -25,22 +24,50 @@ export default {
     fontFamily: {
       'jetbrains': ['JetBrains Mono', 'monospace'],
       'inter': ['Inter', 'monospace'],
+    },
+    animation: {
+      'animacaoSubir': 'animacaoCima 10s linear infinite',
+      'animacaoDescer': 'animacaoBaixo 10s linear infinite',
+      'typewriter': 'typewriter 12s steps(30) 1s infinite',
+      'blink-cursor': 'blinkTextCursor 500ms steps(9) infinite normal',
+    },
+    keyframes: {
+      animacaoCima: { 
+        '0%': { transform: 'translateY(10vh) rotate(90deg)' },
+        '100%': { transform: 'translateY(258vh) rotate(90deg)' },
+      },
+      animacaoBaixo: {
+        '0%': { transform: 'translateY(10vh) rotate(90deg)' },
+        '100%': { transform: 'translateY(249vh) rotate(90deg)' },
+      },
+      digitando: {
+        'from': { width: '0' }, // Começa com 0% de largura
+        'to': { width: '100%' }, // Aumenta até 100% da largura
+      },
+      blink: {
+        '0%': { borderColor: 'transparent' },
+        '50%': { borderColor: 'rgba(255, 255, 255, 0.7)' }, // Ajuste para o efeito de piscar
+        '100%': { borderColor: 'transparent' },
+      },
+      typewriter: {
+        '0%': { width: '0vw' },
+        '10%': { width: '0vw' },
+        '25%': { width: '50vw' },
+        '75%': { width: '50vw' },
+        '90%': { width: '0vw' },
+        '100%': { width: '0vw' },
+      },
+      blinkTextCursor: {
+        'from': { borderColor: 'rgba(255, 255, 255, 0.75)' },
+        'to': { borderColor: 'transparent' },
+      },
+      spacing: {
+        'line-width': '160px', // Define a largura da linha para a animação
+      },
+      fontSize: {
+        'large': '180%',
+      },
+    },
   },
-  animation: {
-    'animacaoSubir': 'animacaoCima 10s linear infinite',
-    'animacaoDescer': 'animacaoBaixo 10s linear infinite',
-  },
-  keyframes: {
-    animacaoCima: { 
-      '0%': {transform: 'translateY(10vh) rotate(90deg)'},
-      '100%': {transform: 'translateY(260vh) rotate(90deg)'},
-    }},
-  keyframes: {
-    animacaoBaixo: {
-      '0%': {transform: 'translateY(10vh) rotate(90deg)'},
-      '100%': {transform: 'translateY(229vh) rotate(90deg)'},
-    }
-}},
-
   plugins: [require('tailwindcss-font-inter')],
 };

@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-
+import AnimacaoTwo from "./AnimacaoTwo";
 
 export default function HeroLogin() {
     const location = useLocation();
@@ -35,7 +35,7 @@ export default function HeroLogin() {
                             E para empresas, criando novos desafios ...
                         </h2>
                     </div>
-
+                    
                     {/* A imagem é exibida somente no path '/home' */}
                     {isHomePage && (
                         <img

@@ -53,7 +53,7 @@ export default function AnimacaoTwo() {
     return () => {
       intervalos.forEach(id => clearInterval(id));
     };
-  });
+  }, []);
 
   return (
     <div className="relative w-full h-full">

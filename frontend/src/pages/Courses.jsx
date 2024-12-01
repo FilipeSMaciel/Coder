@@ -4,6 +4,7 @@ import Modal from "react-responsive-modal";
 import 'react-responsive-modal/styles.css';
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
+import Ops from "../components/Ops";
 
 export default function Courses() {
   const [open, setOpen] = useState(false);
@@ -15,8 +16,14 @@ export default function Courses() {
 
   return (
     <>
+    
     <Menu setOpen={setOpen} />
-    <h1>Cursos</h1>
+    <div className="bg-[#B3B3B3] w-full h-[50vw]">
+
+        
+    <Ops />
+
+    </div>
     <Modal
       open={open}
       onClose={() => setOpen(false)}
