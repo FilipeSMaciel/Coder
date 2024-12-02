@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useForm } from "react-hook-form";
 import "./ProjectModal.css";
 
-export default function ProjectModal({ open, setOpen, onAddProject }) {
+export default function ProjectModal({ setOpen, onAddProject }) {
   const { register, handleSubmit, reset } = useForm();
   const [imageUrl, setImageUrl] = useState("");
 

@@ -25,7 +25,7 @@ return (
     <Menu setOpen={setOpen} />
     <MenuProjetos />
     <div className="flex flex-col lg:flex-row gap-6">
-      <div className="mt-12">
+      <div className="lg:mt-[5.2vw] lg:ml-[3.8vw] mt-[12vw]">
         {/* Pass userId as a prop to PerfilIconeEditar */}
         <PerfilIconeEditar userId={userId} />
       </div>
