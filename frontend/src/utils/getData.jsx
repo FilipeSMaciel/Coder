@@ -1,4 +1,5 @@
-export async function fetchData(endpoint) {
+export async function getData(resource) {
+    const endpoint = `http://localhost:3000/${resource}`;
     try {
         const response = await fetch(endpoint);
         if (!response.ok) {
@@ -9,13 +10,4 @@ export async function fetchData(endpoint) {
     } catch (error) {
         console.error('Error fetching data:', error);
     }
-}
-
-export function extractObject(data, key) {
-    for (const item of data) {
-        if (item[key]) {
-            return item[key];
-        }
-    }
-    return [];
 }

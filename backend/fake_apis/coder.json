@@ -1,183 +1,191 @@
 {
-  "coder": [
+  "users": [
     {
-      "users": [
-        {
-          "id": 1,
-          "username": "Admin",
-          "password": "senha",
-          "email": "admin@email.com",
-          "description": "Eu sou o Admin."
-        },
-        {
-          "id": "a85f",
-          "username": "Felipe Ribeiro",
-          "password": "123",
-          "email": "teste@gmail.com",
-          "description": ""
-        },
-        {
-          "id": "38fd",
-          "username": "Pedro",
-          "password": "123",
-          "email": "pedro@email.com",
-          "description": "Eu sou o Pedro hehe"
-        },
-        {
-          "id": "41c4",
-          "username": "Felipe",
-          "password": "teste",
-          "email": "teste@gmail.com"
-        }
-      ]
+      "id": "1",
+      "username": "Admin",
+      "password": "senha",
+      "email": "admin@email.com",
+      "description": "Eu sou o Admin."
     },
     {
-      "projects": [
-        {
-          "id": "1",
-          "name": "Project Coder++",
-          "image": "https://i.postimg.cc/MGDgSkGr/image.png",
-          "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
-          "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
-          "status": "Em andamento"
-        },
-        {
-          "id": "2",
-          "name": "Coca-Cola Project",
-          "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
-          "description": "Montar um sistema inovador para Coca-Cola",
-          "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
-          "status": "Em andamento"
-        },
-        {
-          "id": "3",
-          "name": "Google Plus",
-          "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Plus_logo_%282015-2019%29.svg/640px-Google_Plus_logo_%282015-2019%29.svg.png",
-          "description": "Montar um sistema de streaming para a Google",
-          "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733084591594,
-          "name": "Teste",
-          "image": "https://a-static.mlcdn.com.br/800x560/pack-com-12x-coca-cola-original-200ml/minhacestinha/7894900012217/1a90ca55d30f01db12105c853258624f.jpeg",
-          "description": "Teste",
-          "requisites": "React",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733085275392,
-          "name": "Projetin",
-          "image": "https://www.bing.com/th?id=OPHS.ro1C2y020iM%2fXw474C474&o=5&pid=21.1&w=148&h=223&qlt=100&dpr=1&bw=6&bc=FFFFFF",
-          "description": "Projetin",
-          "requisites": "React",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733085916807,
-          "name": "Projetin",
-          "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-          "description": "Projetin",
-          "requisites": "React",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733085946828,
-          "name": "Teste",
-          "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-          "description": "Test",
-          "requisites": "HTML",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733086057672,
-          "name": "Fiat Projetin",
-          "image": "https://th.bing.com/th/id/OIP.VLS8lj5J2qM0vKzWNMu61gHaEK?rs=1&pid=ImgDetMain",
-          "description": "Fiat site foda",
-          "requisites": "React",
-          "status": "Em andamento"
-        }
-      ]
+      "id": "a85f",
+      "username": "Felipe Ribeiro",
+      "password": "123",
+      "email": "teste@gmail.com",
+      "description": ""
     },
     {
-      "myProjects": [
-        {
-          "id": 1733085916807,
-          "name": "Projetin",
-          "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-          "description": "Projetin",
-          "requisites": "React",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733085946828,
-          "name": "Teste",
-          "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-          "description": "Test",
-          "requisites": "HTML",
-          "status": "Em andamento"
-        },
-        {
-          "id": 1733086057672,
-          "name": "Fiat Projetin",
-          "image": "https://th.bing.com/th/id/OIP.VLS8lj5J2qM0vKzWNMu61gHaEK?rs=1&pid=ImgDetMain",
-          "description": "Fiat site foda",
-          "requisites": "React",
-          "status": "Em andamento"
-        }
-      ]
+      "id": "38fd",
+      "username": "Pedro",
+      "password": "123",
+      "email": "pedro@email.com",
+      "description": "Eu sou o Pedro hehe"
     },
     {
-      "courses": [
-        {
-          "id": 1,
-          "name": "Banco de Dados",
-          "description": "Introdução ao banco de dados, SQL, ORMs",
-          "duration": "6 meses"
-        },
-        {
-          "id": 2,
-          "name": "OpenAI e humanização da inteligência artificial",
-          "description": "Inteligência artificial, Deep learning, Ciência de dados, Ciência de computação, Ciência de dados e Ciência de computação",
-          "duration": "8 meses"
-        },
-        {
-          "id": 3,
-          "name": "NextJS & VueJS",
-          "description": "Introdução ao framework NextJS e VueJS",
-          "duration": "4 meses"
-        },
-        {
-          "id": 4,
-          "name": "Nextgen:Futuro da programação",
-          "description": "Como se preparar para o futuro da programação",
-          "duration": "1 mês"
-        },
-        {
-          "id": 5,
-          "name": "HTML & CSS: Início",
-          "description": "Introdução ao HTML e CSS",
-          "duration": "3 meses"
-        },
-        {
-          "id": 6,
-          "name": "HTML & CSS: Avançado",
-          "description": "As melhores práticas para HTML e CSS, trabalhando com grid, flexbox e responsividade, outros métodos avançados de CSS",
-          "duration": "6 meses"
-        },
-        {
-          "id": 7,
-          "name": "JavaScript: Início",
-          "description": "Introdução ao JavaScript",
-          "duration": "3 meses"
-        },
-        {
-          "id": 8,
-          "name": "JavaScript: Avançado",
-          "description": "As melhores práticas para JavaScript, trabalhando com event listeners, callbacks, promises, async/await, outros métodos avançados de JavaScript",
-          "duration": "6 meses"
-        }
-      ]
+      "id": "41c4",
+      "username": "Felipe",
+      "password": "teste",
+      "email": "teste@gmail.com"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "name": "Project Coder++",
+      "image": "https://i.postimg.cc/MGDgSkGr/image.png",
+      "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "2",
+      "name": "Coca-Cola Project",
+      "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
+      "description": "Montar um sistema inovador para Coca-Cola",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "3",
+      "name": "Google Plus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Plus_logo_%282015-2019%29.svg/640px-Google_Plus_logo_%282015-2019%29.svg.png",
+      "description": "Montar um sistema de streaming para a Google",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733084591594",
+      "name": "Teste",
+      "image": "https://a-static.mlcdn.com.br/800x560/pack-com-12x-coca-cola-original-200ml/minhacestinha/7894900012217/1a90ca55d30f01db12105c853258624f.jpeg",
+      "description": "Teste",
+      "requisites": "React",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733085275392",
+      "name": "Projetin",
+      "image": "https://www.bing.com/th?id=OPHS.ro1C2y020iM%2fXw474C474&o=5&pid=21.1&w=148&h=223&qlt=100&dpr=1&bw=6&bc=FFFFFF",
+      "description": "Projetin",
+      "requisites": "React",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733085916807",
+      "name": "Projetin",
+      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
+      "description": "Projetin",
+      "requisites": "React",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733085946828",
+      "name": "Teste",
+      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
+      "description": "Test",
+      "requisites": "HTML",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733086057672",
+      "name": "Fiat Projetin",
+      "image": "https://th.bing.com/th/id/OIP.VLS8lj5J2qM0vKzWNMu61gHaEK?rs=1&pid=ImgDetMain",
+      "description": "Fiat site foda",
+      "requisites": "React",
+      "status": "Em andamento"
+    },
+    {
+      "id": 1733109296228,
+      "name": "Site de carros",
+      "image": "https://th.bing.com/th/id/R.a2bf51b9c5916376718ca22217c825f4?rik=MqL46OFwNThgOg&pid=ImgRaw&r=0",
+      "description": "Avenida",
+      "requisites": "HTML",
+      "status": "Em andamento",
+      "companyId": 2
+    }
+  ],
+  "myProjects": [
+    {
+      "id": "1733085916807",
+      "name": "Projetin",
+      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
+      "description": "Projetin",
+      "requisites": "React",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733085946828",
+      "name": "Teste",
+      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
+      "description": "Test",
+      "requisites": "HTML",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1733086057672",
+      "name": "Fiat Projetin",
+      "image": "https://th.bing.com/th/id/OIP.VLS8lj5J2qM0vKzWNMu61gHaEK?rs=1&pid=ImgDetMain",
+      "description": "Fiat site foda",
+      "requisites": "React",
+      "status": "Em andamento"
+    },
+    {
+      "id": 1733109296228,
+      "name": "Site de carros",
+      "image": "https://th.bing.com/th/id/R.a2bf51b9c5916376718ca22217c825f4?rik=MqL46OFwNThgOg&pid=ImgRaw&r=0",
+      "description": "Avenida",
+      "requisites": "HTML",
+      "status": "Em andamento",
+      "companyId": 2
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Banco de Dados",
+      "description": "Introdução ao banco de dados, SQL, ORMs",
+      "duration": "6 meses"
+    },
+    {
+      "id": "2",
+      "name": "OpenAI e humanização da inteligência artificial",
+      "description": "Inteligência artificial, Deep learning, Ciência de dados, Ciência de computação, Ciência de dados e Ciência de computação",
+      "duration": "8 meses"
+    },
+    {
+      "id": "3",
+      "name": "NextJS & VueJS",
+      "description": "Introdução ao framework NextJS e VueJS",
+      "duration": "4 meses"
+    },
+    {
+      "id": "4",
+      "name": "Nextgen:Futuro da programação",
+      "description": "Como se preparar para o futuro da programação",
+      "duration": "1 mês"
+    },
+    {
+      "id": "5",
+      "name": "HTML & CSS: Início",
+      "description": "Introdução ao HTML e CSS",
+      "duration": "3 meses"
+    },
+    {
+      "id": "6",
+      "name": "HTML & CSS: Avançado",
+      "description": "As melhores práticas para HTML e CSS, trabalhando com grid, flexbox e responsividade, outros métodos avançados de CSS",
+      "duration": "6 meses"
+    },
+    {
+      "id": "7",
+      "name": "JavaScript: Início",
+      "description": "Introdução ao JavaScript",
+      "duration": "3 meses"
+    },
+    {
+      "id": "8",
+      "name": "JavaScript: Avançado",
+      "description": "As melhores práticas para JavaScript, trabalhando com event listeners, callbacks, promises, async/await, outros métodos avançados de JavaScript",
+      "duration": "6 meses"
     }
   ]
 }

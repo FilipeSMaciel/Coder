@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "Admin",
       "password": "senha",
       "email": "admin@email.com",
-      "description": "Eu sou o Admin."
+      "description": "Eu sou o Ademir, admin do coder mais mais."
     },
     {
       "id": "a85f",
