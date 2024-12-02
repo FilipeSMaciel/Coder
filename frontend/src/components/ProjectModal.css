@@ -1,0 +1,35 @@
+.customOverlay {
+
+  background: rgba(66, 66, 66, 0.571)
+}
+
+.customModal {
+
+  background: #1E1E1E;
+  border-radius: 1rem;
+
+}
+
+.react-responsive-modal-modal {
+  max-width: 100vw;
+  padding: 0;
+}
+
+/* Define a posição inicial (fora da tela à direita) */
+.move-right {
+  transform: translateX(100%);
+}
+
+/* Define a posição final (visível no centro) */
+.move-left {
+  transform: translateX(0);
+}
+
+/* Transição para suavizar o movimento */
+.transition-transform {
+  transition: transform 1s ease-in-out;
+}
+
+.react-responsive-modal-closeButton {
+  z-index: 30;
+}
