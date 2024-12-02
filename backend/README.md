@@ -15,3 +15,7 @@ npx json-server --watch ./fake_apis/myTests.json --port 3004
 
 npx json-server --watch ./fake_apis/myProjects.json --port 3005
 ```
+
+```
+npx json-server --watch ./fake_apis/coder.json
+```
