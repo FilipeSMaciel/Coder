@@ -1,16 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-export default function MainProjects() {
-    const [projects, setProjects] = useState([]);
+export default function MainProjects({ projects }) {
     const [hoveredProjectId, setHoveredProjectId] = useState(null);
-
-    useEffect(() => {
-        // Fetching data from the API
-        fetch('http://localhost:3001/projects')
-            .then(response => response.json())
-            .then(data => setProjects(data))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
 
     const titulo = "text-verde_principal font-jetbrains text-center sm:p-6 text-[1.5rem] sm:text-[2.3vw] font-light";
     const projectItem = "w-[18rem] sm:w-[30vw] text-wrap capitalize p-2 text-verde_principal border-[0.2rem] border-background font-jetbrains text-center text-[1rem] sm:text-[1.2vw] font-extralight hover:border-texto_header hover:bg-neutral-600/20 hover:scale-x-105";
@@ -40,3 +32,12 @@ export default function MainProjects() {
         </div>
     );
 }
+
+MainProjects.propTypes = {
+    projects: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+            name: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};

@@ -5,24 +5,33 @@ import 'react-responsive-modal/styles.css';
 import LoginModal from "../components/LoginModal";
 import Footer from "../components/Footer";
 import Menu from "../components/Menu";
+import { getData } from "../utils/getData";
 
 export default function Freelances() {
     const [open, setOpen] = useState(false);
     const [freelances, setFreelances] = useState([]);
     const [filteredFreelances, setFilteredFreelances] = useState([]);
+    const [candidatesModalOpen, setCandidatesModalOpen] = useState(false);
+    const [selectedProjectCandidates, setSelectedProjectCandidates] = useState([]);
 
     const { register, watch } = useForm();
     const searchQuery = watch("search", "");
 
     useEffect(() => {
-        // Fetching data from the API
-        fetch('http://localhost:3001/projects')
-            .then(response => response.json())
-            .then(data => {
-                setFreelances(data);
-                setFilteredFreelances(data);
-            })
-            .catch(error => console.error('Error fetching data:', error));
+        // Fetching data using the getData function
+        const fetchFreelances = async () => {
+            try {
+                const data = await getData('projects');
+                if (data) {
+                    setFreelances(data);
+                    setFilteredFreelances(data);
+                }
+            } catch (error) {
+                console.error('Error fetching freelances:', error);
+            }
+        };
+
+        fetchFreelances();
     }, []);
 
     useEffect(() => {
@@ -39,11 +48,53 @@ export default function Freelances() {
         setOpen(false);
     };
 
+    const handleApplyToProject = async (project) => {
+        try {
+            const response = await fetch('http://localhost:3000/myProjects', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(project),
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to apply to project');
+            }
+
+            // Get the current username from local storage or any other source
+            const username = localStorage.getItem("username");
+
+            // Retrieve existing candidates from localStorage
+            const candidatesKey = `listOfUsersTo${project.name}`;
+            const existingCandidates = JSON.parse(localStorage.getItem(candidatesKey)) || [];
+
+            // Add the current user to the list of candidates
+            if (!existingCandidates.includes(username)) {
+                existingCandidates.push(username);
+                localStorage.setItem(candidatesKey, JSON.stringify(existingCandidates));
+            }
+
+            console.log(`Applied to project: ${project.name}`);
+        } catch (error) {
+            console.error('Error applying to project:', error);
+        }
+    };
+
+    const handleViewCandidates = (project) => {
+        const candidatesKey = `listOfUsersTo${project.name}`;
+        const candidates = JSON.parse(localStorage.getItem(candidatesKey)) || [];
+        setSelectedProjectCandidates(candidates);
+        setCandidatesModalOpen(true);
+    };
+
     {/* Consts de Estilização */ }
 
     const iconProject = "size-[8vw] p-2 px-[0.09rem]";
     const projectDesc = "flex flex-col gap-2 text-center justify-center items-center";
     const filtrosBotton = "bg-[#1E1E1E] uppercase border-[2px] px-[1vw] border-black drop-shadow-x2l text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]";
+    const candidatarButton = "w-full h-full flex items-center justify-center";
+    const verCandidatosButton = "bg-[#1E1E1E] uppercase border-[2px] px-[1vw] border-black drop-shadow-2xl text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]";
 
     return (
         <div className="bg-background">
@@ -89,22 +140,24 @@ export default function Freelances() {
                             <img className={iconProject} src={freelance.image} alt={`${freelance.name} Logo`} />
                             <div className="flex flex-col items-center justify-center gap-5">
                                 <div className={projectDesc}>
+                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance)}>
+                                        Ver Candidatos
+                                    </button>
                                     <h4 className="text-[3vw] sm:text-[1.5vw] text-texto_header">{freelance.name}</h4>
                                     <p className="text-[2.5vw] sm:text-[1.2vw] m-auto w-[40vw] text-center text-texto_header">{freelance.description}</p>
                                     <p className="hidden sm:flex text-[2vw] sm:text-[1vw] m-auto mt-5 text-verde_botao">Requisitos: {freelance.requisites}</p>
                                 </div>
-                                <div className="lg:ml-[2vw] text-nowrap ml-[12vw] lg:text-[2vw] lg:mr-0 mr-12 font-jetbrains text-[2.5vw] bg-background lg:w-[24vw] w-[32vw] pl-2.5 lg:pl-6 text-verde_principal border-[0.01vw] border-verde_principal drop-shadow-3xl">
-                                <button>
-                                        Estou interessado
-                                </button>
-
+                                <div className="flex flex-col gap-2 lg:ml-[2vw] text-nowrap ml-[12vw] lg:text-[2vw] lg:mr-0 mr-12 font-jetbrains text-[2.5vw] bg-background lg:w-[24vw] w-[32vw] pl-2.5 lg:pl-6 text-verde_principal border-[0.01vw] border-verde_principal drop-shadow-3xl">
+                                    <button className={candidatarButton} onClick={() => handleApplyToProject(freelance)}>
+                                        Me candidatar
+                                    </button>
                                 </div>
                                 <a className="text-verde_principal underline text-[3vw] sm:hidden" href="#">Saiba Mais...</a>
                             </div>
-                            <div className="flex gap-1 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
+                            <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
                                 <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
                                 <p className="text-verde_principal font-extralight">15</p>
-                                <a className="hidden text-verde_principal underline text-[1vw]" href="#">Saiba Mais...</a>
+                                <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
                         </div>
                     ))}
@@ -119,22 +172,25 @@ export default function Freelances() {
                             <img className={iconProject} src={freelance.image} alt={`${freelance.name} Logo`} />
                             <div className="flex flex-col items-center justify-center gap-5">
                                 <div className={projectDesc}>
+                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance)}>
+                                        Ver Candidatos
+                                    </button>
                                     <h4 className="text-[3vw] sm:text-[1.5vw] text-texto_header">{freelance.name}</h4>
                                     <p className="text-[2.5vw] sm:text-[1.2vw] m-auto w-[40vw] text-center text-texto_header">{freelance.description}</p>
                                     <p className="hidden sm:flex text-[2vw] sm:text-[1vw] m-auto mt-5 text-verde_botao">Requisitos: {freelance.requisites}</p>
                                 </div>
-                                <div className="lg:ml-[2vw] text-nowrap ml-[12vw] lg:text-[2vw] lg:mr-0 mr-12 font-jetbrains text-[2.5vw] bg-background lg:w-[24vw] w-[32vw] pl-2.5 lg:pl-6 text-verde_principal border-[0.01vw] border-verde_principal drop-shadow-3xl">
-                                <button>
-                                        Estou interessado
-                                </button>
+                                <div className="flex flex-col gap-2 lg:ml-[2vw] text-nowrap ml-[12vw] lg:text-[2vw] lg:mr-0 mr-12 font-jetbrains text-[2.5vw] bg-background lg:w-[24vw] w-[32vw] pl-2.5 lg:pl-6 text-verde_principal border-[0.01vw] border-verde_principal drop-shadow-3xl">
 
+                                    <button className={candidatarButton} onClick={() => handleApplyToProject(freelance)}>
+                                        Me candidatar
+                                    </button>
                                 </div>
                                 <a className="text-verde_principal underline text-[3vw] sm:hidden" href="#">Saiba Mais...</a>
                             </div>
-                            <div className="flex gap-1 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
+                            <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
                                 <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
                                 <p className="text-verde_principal font-extralight">15</p>
-                                <a className="hidden text-verde_principal underline text-[1vw]" href="#">Saiba Mais...</a>
+                                <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
                         </div>
                     ))}
@@ -152,6 +208,29 @@ export default function Freelances() {
             >
                 <LoginModal onLogin={handleLogoff} />
             </Modal>
+
+            {/* Candidates Modal */}
+            <Modal
+                open={candidatesModalOpen}
+                onClose={() => setCandidatesModalOpen(false)}
+                center
+                classNames={{
+                    overlay: 'customOverlay',
+                    modal: 'customModal',
+                }}
+            >
+                <h2 className="text-2xl font-bold mb-4">Candidatos</h2>
+                <ul className="list-disc pl-5">
+                    {selectedProjectCandidates.length > 0 ? (
+                        selectedProjectCandidates.map((candidate, index) => (
+                            <li key={index} className="mb-2">{candidate}</li>
+                        ))
+                    ) : (
+                        <li>Nenhum candidato ainda.</li>
+                    )}
+                </ul>
+            </Modal>
+
             <Footer />
         </div>
     );

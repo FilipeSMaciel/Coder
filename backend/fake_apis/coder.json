@@ -5,27 +5,7 @@
       "username": "Admin",
       "password": "senha",
       "email": "admin@email.com",
-      "description": "Eu sou o Admin."
-    },
-    {
-      "id": "a85f",
-      "username": "Felipe Ribeiro",
-      "password": "123",
-      "email": "teste@gmail.com",
-      "description": ""
-    },
-    {
-      "id": "38fd",
-      "username": "Pedro",
-      "password": "123",
-      "email": "pedro@email.com",
-      "description": "Eu sou o Pedro hehe"
-    },
-    {
-      "id": "41c4",
-      "username": "Felipe",
-      "password": "teste",
-      "email": "teste@gmail.com"
+      "description": "Eu sou o Admin.\nE controlo tudo."
     }
   ],
   "projects": [
@@ -52,90 +32,72 @@
       "description": "Montar um sistema de streaming para a Google",
       "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
       "status": "Em andamento"
-    },
-    {
-      "id": "1733084591594",
-      "name": "Teste",
-      "image": "https://a-static.mlcdn.com.br/800x560/pack-com-12x-coca-cola-original-200ml/minhacestinha/7894900012217/1a90ca55d30f01db12105c853258624f.jpeg",
-      "description": "Teste",
-      "requisites": "React",
-      "status": "Em andamento"
-    },
-    {
-      "id": "1733085275392",
-      "name": "Projetin",
-      "image": "https://www.bing.com/th?id=OPHS.ro1C2y020iM%2fXw474C474&o=5&pid=21.1&w=148&h=223&qlt=100&dpr=1&bw=6&bc=FFFFFF",
-      "description": "Projetin",
-      "requisites": "React",
-      "status": "Em andamento"
-    },
-    {
-      "id": "1733085916807",
-      "name": "Projetin",
-      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-      "description": "Projetin",
-      "requisites": "React",
-      "status": "Em andamento"
-    },
-    {
-      "id": "1733085946828",
-      "name": "Teste",
-      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-      "description": "Test",
-      "requisites": "HTML",
-      "status": "Em andamento"
-    },
-    {
-      "id": "1733086057672",
-      "name": "Fiat Projetin",
-      "image": "https://th.bing.com/th/id/OIP.VLS8lj5J2qM0vKzWNMu61gHaEK?rs=1&pid=ImgDetMain",
-      "description": "Fiat site foda",
-      "requisites": "React",
-      "status": "Em andamento"
-    },
-    {
-      "id": 1733109296228,
-      "name": "Site de carros",
-      "image": "https://th.bing.com/th/id/R.a2bf51b9c5916376718ca22217c825f4?rik=MqL46OFwNThgOg&pid=ImgRaw&r=0",
-      "description": "Avenida",
-      "requisites": "HTML",
-      "status": "Em andamento",
-      "companyId": 2
     }
   ],
   "myProjects": [
     {
-      "id": "1733085916807",
-      "name": "Projetin",
-      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-      "description": "Projetin",
-      "requisites": "React",
+      "id": "1",
+      "name": "Project Coder++",
+      "image": "https://i.postimg.cc/MGDgSkGr/image.png",
+      "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
       "status": "Em andamento"
     },
     {
-      "id": "1733085946828",
-      "name": "Teste",
-      "image": "https://logosmarcas.net/wp-content/uploads/2020/09/Google-Emblema.png",
-      "description": "Test",
-      "requisites": "HTML",
+      "id": "2",
+      "name": "Coca-Cola Project",
+      "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
+      "description": "Montar um sistema inovador para Coca-Cola",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
       "status": "Em andamento"
     },
     {
-      "id": "1733086057672",
-      "name": "Fiat Projetin",
-      "image": "https://th.bing.com/th/id/OIP.VLS8lj5J2qM0vKzWNMu61gHaEK?rs=1&pid=ImgDetMain",
-      "description": "Fiat site foda",
-      "requisites": "React",
+      "id": "3",
+      "name": "Google Plus",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Plus_logo_%282015-2019%29.svg/640px-Google_Plus_logo_%282015-2019%29.svg.png",
+      "description": "Montar um sistema de streaming para a Google",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
       "status": "Em andamento"
     },
     {
-      "id": 1733109296228,
-      "name": "Site de carros",
-      "image": "https://th.bing.com/th/id/R.a2bf51b9c5916376718ca22217c825f4?rik=MqL46OFwNThgOg&pid=ImgRaw&r=0",
-      "description": "Avenida",
-      "requisites": "HTML",
-      "status": "Em andamento",
-      "companyId": 2
+      "id": "1",
+      "name": "Project Coder++",
+      "image": "https://i.postimg.cc/MGDgSkGr/image.png",
+      "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "2",
+      "name": "Coca-Cola Project",
+      "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
+      "description": "Montar um sistema inovador para Coca-Cola",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1",
+      "name": "Project Coder++",
+      "image": "https://i.postimg.cc/MGDgSkGr/image.png",
+      "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1",
+      "name": "Project Coder++",
+      "image": "https://i.postimg.cc/MGDgSkGr/image.png",
+      "description": "Montar um sistema de gerenciamento de projetos, captação de freelas e contratação de desenvolvedores",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
+    },
+    {
+      "id": "2",
+      "name": "Coca-Cola Project",
+      "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
+      "description": "Montar um sistema inovador para Coca-Cola",
+      "requisites": "HTML, CSS, JavaScript, ReactJS, NodeJS, MySQL",
+      "status": "Em andamento"
     }
   ],
   "courses": [
