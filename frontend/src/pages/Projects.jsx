@@ -18,7 +18,7 @@ export default function Projects() {
   const handleAddProject = (project) => {
     console.log('Adding project:', project);
 
-    
+
   };
 
   const handleLogoff = (username) => {
@@ -52,12 +52,15 @@ export default function Projects() {
         </div>
 
         {/* Modal de Login */}
-        <Modal open={open} onClose={() => setOpen(false)} center>
+        <Modal open={open} onClose={() => setOpen(false)} center  >
           <LoginModal onLogin={handleLogoff} />
         </Modal>
 
         {/* Modal de Novo Projeto */}
-        <Modal open={openProject} onClose={() => setOpenProject(false)} center>
+        <Modal open={openProject} onClose={() => setOpenProject(false)} center classNames={{
+          overlay: 'customOverlay',
+          modal: 'customModal',
+        }}>
           <ProjectModal open={openProject} setOpen={setOpenProject} onAddProject={handleAddProject} />
         </Modal>
       </div>
