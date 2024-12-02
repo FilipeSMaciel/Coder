@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "./LoginModal.css"
+import "./LoginModal.css";
 
 export default function LoginModal({ onLogin }) {
   const [isRegistering, setIsRegistering] = useState(false);
@@ -31,14 +31,20 @@ export default function LoginModal({ onLogin }) {
       const response = await fetch(API_URL);
       const users = await response.json();
 
-      if (users.length > 0) {
+      // Verify if the user exists with the correct password
+      const user = users.find(
+        (user) => user.username === data.username && user.password === data.password
+      );
+
+      if (user) {
         setSuccessMessage("Login bem-sucedido! Bem-vindo.");
         localStorage.setItem("username", data.username);
         setIsLoggedIn(true);
         onLogin(data.username);
-        navigate("/home");
+        navigate("/home"); // Redirect to the home page or another logged-in page
       } else {
         setErrorMessage("Usuário ou senha inválidos.");
+        navigate("/"); // Redirect to HomeLogout if login fails
       }
     } catch (error) {
       console.log(error);

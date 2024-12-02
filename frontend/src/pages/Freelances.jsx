@@ -18,24 +18,22 @@ export default function Freelances() {
     const searchQuery = watch("search", "");
 
     useEffect(() => {
-        // Fetching data using the getData function
-        const fetchFreelances = async () => {
-            try {
-                const data = await getData('projects');
-                if (data) {
-                    setFreelances(data);
-                    setFilteredFreelances(data);
-                }
-            } catch (error) {
-                console.error('Error fetching freelances:', error);
-            }
-        };
-
         fetchFreelances();
     }, []);
 
+    const fetchFreelances = async () => {
+        try {
+            const data = await getData('projects');
+            if (data) {
+                setFreelances(data);
+                setFilteredFreelances(data);
+            }
+        } catch (error) {
+            console.error('Error fetching freelances:', error);
+        }
+    };
+
     useEffect(() => {
-        // Filter freelances based on search query
         const filtered = freelances.filter(freelance =>
             freelance.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
             freelance.requisites.toLowerCase().includes(searchQuery.toLowerCase())
@@ -48,44 +46,55 @@ export default function Freelances() {
         setOpen(false);
     };
 
-    const handleApplyToProject = async (project) => {
+    const handleApplyToProject = async (projectId) => {
         try {
-            const response = await fetch('http://localhost:3000/myProjects', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(project),
-            });
-
-            if (!response.ok) {
-                throw new Error('Failed to apply to project');
-            }
-
-            // Get the current username from local storage or any other source
             const username = localStorage.getItem("username");
 
-            // Retrieve existing candidates from localStorage
-            const candidatesKey = `listOfUsersTo${project.name}`;
-            const existingCandidates = JSON.parse(localStorage.getItem(candidatesKey)) || [];
-
-            // Add the current user to the list of candidates
-            if (!existingCandidates.includes(username)) {
-                existingCandidates.push(username);
-                localStorage.setItem(candidatesKey, JSON.stringify(existingCandidates));
+            // Fetch the current project data to get the existing users
+            const response = await fetch(`http://localhost:3000/projects/${projectId}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch project data');
             }
+            const projectData = await response.json();
 
-            console.log(`Applied to project: ${project.name}`);
+            // Check if the user is already a candidate
+            if (!projectData.users.includes(username)) {
+                const updatedUsers = [...projectData.users, username];
+
+                // Update the project with the new list of users
+                const updateResponse = await fetch(`http://localhost:3000/projects/${projectId}`, {
+                    method: 'PATCH',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ users: updatedUsers }),
+                });
+
+                if (!updateResponse.ok) {
+                    throw new Error('Failed to update project with new candidate');
+                }
+
+                console.log(`Applied to project: ${projectData.name}`);
+            } else {
+                console.log(`User ${username} is already a candidate for project: ${projectData.name}`);
+            }
         } catch (error) {
             console.error('Error applying to project:', error);
         }
     };
 
-    const handleViewCandidates = (project) => {
-        const candidatesKey = `listOfUsersTo${project.name}`;
-        const candidates = JSON.parse(localStorage.getItem(candidatesKey)) || [];
-        setSelectedProjectCandidates(candidates);
-        setCandidatesModalOpen(true);
+    const handleViewCandidates = async (projectId) => {
+        try {
+            const response = await fetch(`http://localhost:3000/projects/${projectId}`);
+            if (!response.ok) {
+                throw new Error('Failed to fetch project data');
+            }
+            const projectData = await response.json();
+            setSelectedProjectCandidates(projectData.users || []);
+            setCandidatesModalOpen(true);
+        } catch (error) {
+            console.error('Error fetching candidates:', error);
+        }
     };
 
     {/* Consts de Estilização */ }
@@ -140,7 +149,7 @@ export default function Freelances() {
                             <img className={iconProject} src={freelance.image} alt={`${freelance.name} Logo`} />
                             <div className="flex flex-col items-center justify-center gap-5">
                                 <div className={projectDesc}>
-                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance)}>
+                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance.id)}>
                                         Ver Candidatos
                                     </button>
                                     <h4 className="text-[3vw] sm:text-[1.5vw] text-texto_header">{freelance.name}</h4>
@@ -148,7 +157,7 @@ export default function Freelances() {
                                     <p className="hidden sm:flex text-[2vw] sm:text-[1vw] m-auto mt-5 text-verde_botao">Requisitos: {freelance.requisites}</p>
                                 </div>
                                 <div className="flex flex-col gap-2 lg:ml-[2vw] text-nowrap ml-[12vw] lg:text-[2vw] lg:mr-0 mr-12 font-jetbrains text-[2.5vw] bg-background lg:w-[24vw] w-[32vw] pl-2.5 lg:pl-6 text-verde_principal border-[0.01vw] border-verde_principal drop-shadow-3xl">
-                                    <button className={candidatarButton} onClick={() => handleApplyToProject(freelance)}>
+                                    <button className={candidatarButton} onClick={() => handleApplyToProject(freelance.id)}>
                                         Me candidatar
                                     </button>
                                 </div>
@@ -156,7 +165,7 @@ export default function Freelances() {
                             </div>
                             <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
                                 <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
-                                <p className="text-verde_principal font-extralight">15</p>
+                                <p className="text-verde_principal font-extralight">{freelance.users ? freelance.users.length : 0}</p>
                                 <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
                         </div>
@@ -172,7 +181,7 @@ export default function Freelances() {
                             <img className={iconProject} src={freelance.image} alt={`${freelance.name} Logo`} />
                             <div className="flex flex-col items-center justify-center gap-5">
                                 <div className={projectDesc}>
-                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance)}>
+                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance.id)}>
                                         Ver Candidatos
                                     </button>
                                     <h4 className="text-[3vw] sm:text-[1.5vw] text-texto_header">{freelance.name}</h4>
@@ -180,8 +189,7 @@ export default function Freelances() {
                                     <p className="hidden sm:flex text-[2vw] sm:text-[1vw] m-auto mt-5 text-verde_botao">Requisitos: {freelance.requisites}</p>
                                 </div>
                                 <div className="flex flex-col gap-2 lg:ml-[2vw] text-nowrap ml-[12vw] lg:text-[2vw] lg:mr-0 mr-12 font-jetbrains text-[2.5vw] bg-background lg:w-[24vw] w-[32vw] pl-2.5 lg:pl-6 text-verde_principal border-[0.01vw] border-verde_principal drop-shadow-3xl">
-
-                                    <button className={candidatarButton} onClick={() => handleApplyToProject(freelance)}>
+                                    <button className={candidatarButton} onClick={() => handleApplyToProject(freelance.id)}>
                                         Me candidatar
                                     </button>
                                 </div>
@@ -189,7 +197,7 @@ export default function Freelances() {
                             </div>
                             <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
                                 <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
-                                <p className="text-verde_principal font-extralight">15</p>
+                                <p className="text-verde_principal font-extralight">{freelance.users ? freelance.users.length : 0}</p>
                                 <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
                         </div>
@@ -201,24 +209,11 @@ export default function Freelances() {
                 </div>
             </main>
 
-            <Modal
-                open={open}
-                onClose={() => setOpen(false)}
-                center
-            >
+            <Modal open={open} onClose={() => setOpen(false)} center>
                 <LoginModal onLogin={handleLogoff} />
             </Modal>
 
-            {/* Candidates Modal */}
-            <Modal
-                open={candidatesModalOpen}
-                onClose={() => setCandidatesModalOpen(false)}
-                center
-                classNames={{
-                    overlay: 'customOverlay',
-                    modal: 'customModal',
-                }}
-            >
+            <Modal open={candidatesModalOpen} onClose={() => setCandidatesModalOpen(false)} center>
                 <h2 className="text-2xl font-bold mb-4">Candidatos</h2>
                 <ul className="list-disc pl-5">
                     {selectedProjectCandidates.length > 0 ? (

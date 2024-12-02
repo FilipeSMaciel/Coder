@@ -11,7 +11,7 @@ export default function HomeLogout() {
 
     const handleLogin = (username) => {
         localStorage.setItem("username", username);
-        setOpen(false);
+        setOpen(false); // Close the modal after successful login
     };
 
     return (
@@ -26,18 +26,15 @@ export default function HomeLogout() {
                 onClose={() => setOpen(false)}
                 center
                 classNames={{
-                    overlay: 'customOverlay', 
+                    overlay: 'customOverlay',
                     modal: 'customModal'
-                    
                 }}
                 className="drop-shadow-3xl"
             >
                 <LoginModal onLogin={handleLogin} />
-
             </Modal>
 
             <Footer />
-
         </>
     );
 }
