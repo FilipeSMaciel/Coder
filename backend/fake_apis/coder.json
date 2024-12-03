@@ -11,7 +11,8 @@
       "id": "4db2",
       "username": "Pedro",
       "password": "123",
-      "email": "pedro@email.com"
+      "email": "pedro@email.com",
+      "description": "Eu sou o Pedro hehe"
     }
   ],
   "projects": [

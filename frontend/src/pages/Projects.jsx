@@ -14,9 +14,9 @@ import { getData } from "../utils/getData";
 export default function Projects() {
 const [loginModalOpen, setLoginModalOpen] = useState(false);
 const [projectModalOpen, setProjectModalOpen] = useState(false);
-const [candidatesModalOpen, setCandidatesModalOpen] = useState(false);
+// const [candidatesModalOpen, setCandidatesModalOpen] = useState(false);
 const [myProjects, setMyProjects] = useState([]);
-const [selectedProjectCandidates, setSelectedProjectCandidates] = useState([]);
+// const [selectedProjectCandidates, setSelectedProjectCandidates] = useState([]);
 
 useEffect(() => {
     fetchUserProjects();
@@ -35,19 +35,19 @@ const fetchUserProjects = async () => {
     }
 };
 
-const handleViewCandidates = async (projectId) => {
-    try {
-        const response = await fetch(`http://localhost:3000/projects/${projectId}`);
-        if (!response.ok) {
-            throw new Error('Failed to fetch project data');
-        }
-        const projectData = await response.json();
-        setSelectedProjectCandidates(projectData.users || []);
-        setCandidatesModalOpen(true); // Open modal to view candidates
-    } catch (error) {
-        console.error('Error fetching candidates:', error);
-    }
-};
+// const handleViewCandidates = async (projectId) => {
+//     try {
+//         const response = await fetch(`http://localhost:3000/projects/${projectId}`);
+//         if (!response.ok) {
+//             throw new Error('Failed to fetch project data');
+//         }
+//         const projectData = await response.json();
+//         setSelectedProjectCandidates(projectData.users || []);
+//         setCandidatesModalOpen(true); // Open modal to view candidates
+//     } catch (error) {
+//         console.error('Error fetching candidates:', error);
+//     }
+// };
 
 const handleAddProject = async (project) => {
     try {
@@ -113,9 +113,6 @@ return (
                 {myProjects.map((project) => (
                     <div key={project.id}>
                         <CardsTwo project={project} />
-                        <button onClick={() => handleViewCandidates(project.id)} className="ver-candidatos-button">
-                            Ver Candidatos
-                        </button>
                     </div>
                 ))}
                 <img src="linhagrande.png" className="mr-10 lg:mr-0"></img>
@@ -134,20 +131,6 @@ return (
             {/* Modal de Novo Projeto */}
             <Modal open={projectModalOpen} onClose={() => setProjectModalOpen(false)} center>
                 <ProjectModal open={projectModalOpen} setOpen={setProjectModalOpen} onAddProject={handleAddProject} />
-            </Modal>
-
-            {/* Candidates Modal */}
-            <Modal open={candidatesModalOpen} onClose={() => setCandidatesModalOpen(false)} center>
-                <h2 className="text-2xl font-bold mb-4">Candidatos</h2>
-                <ul className="list-disc pl-5">
-                    {selectedProjectCandidates.length > 0 ? (
-                        selectedProjectCandidates.map((candidate, index) => (
-                            <li key={index} className="mb-2">{candidate}</li>
-                        ))
-                    ) : (
-                        <li>Nenhum candidato ainda.</li>
-                    )}
-                </ul>
             </Modal>
         </div>
         <Footer />

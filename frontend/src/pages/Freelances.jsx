@@ -8,6 +8,7 @@ import Menu from "../components/Menu";
 import { getData } from "../utils/getData";
 import { VerCandidatosModal } from "../components/VerCandidatosModal";
 
+
 export default function Freelances() {
     const [open, setOpen] = useState(false);
     const [freelances, setFreelances] = useState([]);
@@ -167,8 +168,8 @@ export default function Freelances() {
                             <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
                                 <button className={candidatarButton} onClick={() => handleApplyToProject(freelance.id)}>
                                     <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
+                                    <p className="text-verde_principal font-extralight ml-2">{freelance.users ? freelance.users.length : 0}</p>
                                 </button>
-                                <p className="text-verde_principal font-extralight">{freelance.users ? freelance.users.length : 0}</p>
                                 <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
                         </div>
@@ -201,8 +202,8 @@ export default function Freelances() {
                             <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
                                 <button className={candidatarButton} onClick={() => handleApplyToProject(freelance.id)}>
                                     <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
+                                    <p className="text-verde_principal font-extralight ml-2">{freelance.users ? freelance.users.length : 0}</p>
                                 </button>
-                                <p className="text-verde_principal font-extralight">{freelance.users ? freelance.users.length : 0}</p>
                                 <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
                         </div>

@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import "react-responsive-modal/styles.css";
 import "./VerCandidatosModal.css";
 
 export function VerCandidatosModal({ candidates }) {

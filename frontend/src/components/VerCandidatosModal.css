@@ -1,14 +1,19 @@
 .candidatesOverlay {
   background: rgba(0, 0, 0, 0.7);
-  }
-  
-  .candidatesModal {
-  max-width: 90vw;
-  background-color: rgba(66, 66, 66, 0.9);
+}
+
+.candidatesModal {
+  max-width: 180vw;
+  background: rgba(66, 66, 66, 0.9);
+  color: white;
   border-radius: 1rem;
-  padding: 4vh;
-  }
-  
-  .react-responsive-modal-closeButton {
+}
+
+.react-responsive-modal-modal {
+  max-width: 100vw;
+  padding: 5vh;
+}
+
+.react-responsive-modal-closeButton {
   z-index: 30;
-  }
+}
