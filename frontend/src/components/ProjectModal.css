@@ -1,15 +1,15 @@
-.customOverlay {
+.projectOverlay {
 
   background: rgba(66, 66, 66, 0.571)
 }
 
-.customModal {
+.projectModal {
   max-width: 100vw;
-  background: #1E1E1E;
   border-radius: 1rem;
-
+  padding: 0;
 }
 
 .react-responsive-modal-closeButton {
   z-index: 30;
+  padding: 0;
 }

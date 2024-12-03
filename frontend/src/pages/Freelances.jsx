@@ -112,7 +112,7 @@ export default function Freelances() {
             <Menu setOpen={setOpen} />
 
             <main className="font-jetbrains">
-                <section className="h-[25vh] sm:h-[45vh] bg-bg_botao-login flex flex-col items-center justify-center gap-[1vh] sm:gap-[2vh] border-b-verde_principal border-[0.1vh]">
+                <section className="h-[25vh] sm:h-[45vh] bg-bg_botao-login flex flex-col items-center justify-center gap-[1vh] sm:gap-[2vh] border-b-verde_principal  border-r-bg_botao-login border-l-bg_botao-login border-[0.1vh]">
                     <h1 className="text-[6vw] sm:text-[3vw] tracking-widest text-verde_principal">Procure um freelance {'>>'}</h1>
                     <h2 className="text-verde_botao text-[4vw] sm:text-[1.6vw] py-2">Pesquise o projeto perfeito para você</h2>
 

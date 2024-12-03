@@ -124,7 +124,10 @@ return (
             </Modal>
 
             {/* Modal de Novo Projeto */}
-            <Modal open={projectModalOpen} onClose={() => setProjectModalOpen(false)} center>
+            <Modal open={projectModalOpen} onClose={() => setProjectModalOpen(false)} center classNames={{
+                    overlay: 'projectOverlay',
+                    modal: 'projectModal'
+                }}>
                 <ProjectModal open={projectModalOpen} setOpen={setProjectModalOpen} onAddProject={handleAddProject} />
             </Modal>
         </div>

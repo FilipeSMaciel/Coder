@@ -24,12 +24,12 @@ export default function ProjectModal({ setOpen, onAddProject }) {
   };
 
   return (
-    <div className="p-1 sm:h-[82vh] bg- rounded-[1rem]">
+    <div className="p-1 sm:h-[82vh] bg- rounded-[1rem] bg-background">
 
-      <h1 className="text-[7vw] sm:text-[2.4vw] text-center text-verde_principal font-bold mb-4">
+      <h1 className="text-[7vw] pt-8 sm:text-[2.4vw] text-center text-verde_principal font-bold mb-4">
         &lt; Adicionar Projeto /&gt;
       </h1>
-      <div className="w-[90vw] flex justify-around max-w-md sm:w-[75vw] sm:h-[70vh] sm:max-w-[100vw] p-6 rounded-md shadow-md font-jetbrains">
+      <div className="w-[85vw] flex justify-around max-w-md sm:w-[75vw] sm:h-[70vh] sm:max-w-[100vw] p-6 rounded-md shadow-md font-jetbrains">
         <form
           className="flex flex-col gap-4 items-center"
           onSubmit={handleSubmit(onSubmitProject)}
@@ -37,7 +37,7 @@ export default function ProjectModal({ setOpen, onAddProject }) {
           <input
             type="text"
             placeholder="Nome do Projeto"
-            className="max-w-[40vw] sm:w-[40vw] border border-verde_principal rounded-md p-2 bg-bg_botao-login z-10 text-[3.7vw] sm:text-[1.3vw]"
+            className="w-full sm:w-[40vw] border border-verde_principal rounded-md p-2 bg-bg_botao-login z-10 text-[3.7vw] sm:text-[1.3vw]"
             required
             {...register("name")}
           />
@@ -45,7 +45,7 @@ export default function ProjectModal({ setOpen, onAddProject }) {
           <input
             type="url"
             placeholder="URL da Imagem"
-            className="max-w-[40vw] sm:w-[40vw] border border-verde_principal rounded-md p-2 bg-bg_botao-login z-10 text-[3.7vw] sm:text-[1.3vw]"
+            className="w-full sm:w-[40vw] border border-verde_principal rounded-md p-2 bg-bg_botao-login z-10 text-[3.7vw] sm:text-[1.3vw]"
             required
             {...register("image")}
             onChange={(e) => setImageUrl(e.target.value)} // Atualiza o estado da URL
@@ -53,18 +53,18 @@ export default function ProjectModal({ setOpen, onAddProject }) {
 
           <textarea
             placeholder="Descrição do Projeto"
-            className="max-w-[40vw] sm:w-[40vw] border border-verde_principal bg-bg_botao-login z-10 rounded-md p-2 text-[3.7vw] sm:text-[1.3vw]"
+            className="w-full sm:w-[40vw] border border-verde_principal bg-bg_botao-login z-10 rounded-md p-2 text-[3.7vw] sm:text-[1.3vw]"
             required
             {...register("description")}
           ></textarea>
           <textarea
             placeholder="Requisitos (separados por vírgula)"
-            className="max-w-[40vw] sm:w-[40vw] border border-verde_principal bg-bg_botao-login z-10 rounded-md p-2 text-[3.7vw] sm:text-[1.3vw]"
+            className="w-full sm:w-[40vw] border border-verde_principal bg-bg_botao-login z-10 rounded-md p-2 text-[3.7vw] sm:text-[1.3vw]"
             required
             {...register("requisites")}
           ></textarea>
           <select
-            className="max-w-[40vw] sm:w-[40vw] border text-white/60 border-verde_principal bg-bg_botao-login z-10 rounded-md p-2 text-[3.7vw] sm:text-[1.3vw]"
+            className="w-full sm:w-[40vw] border text-white/60 border-verde_principal bg-bg_botao-login z-10 rounded-md p-2 text-[3.7vw] sm:text-[1.3vw]"
             required
             {...register("status")}
           >
