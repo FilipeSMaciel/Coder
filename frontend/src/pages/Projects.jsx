@@ -118,11 +118,6 @@ return (
                 <img src="linhagrande.png" className="mr-10 lg:mr-0"></img>
             </div>
 
-            {/* New Button */}
-            <button onClick={() => setProjectModalOpen(true)} className="new-button-class">
-                New Button
-            </button>
-
             {/* Modal de Login */}
             <Modal open={loginModalOpen} onClose={() => setLoginModalOpen(false)} center>
                 <LoginModal onLogin={handleLogoff} />
