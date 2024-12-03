@@ -17,7 +17,7 @@ export default function HomeLogin() {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    // Fetch projects and courses data
+    
     const fetchProjectsAndCourses = async () => {
       try {
         const projectsData = await getData('projects');

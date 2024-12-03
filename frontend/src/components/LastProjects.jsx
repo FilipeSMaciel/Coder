@@ -5,7 +5,7 @@ export default function LastProjects({ projects }) {
     const iconsDiv = "border-[0.1rem] border-verde_principal w-[12vw] h-[6vh] p-2 sm:w-[8vw] sm:h-[16vh]";
     const lastProjectDiv = "flex items-center";
 
-    // Get the last 3 projects
+    
     const lastThreeProjects = projects.slice(-3);
 
     return (

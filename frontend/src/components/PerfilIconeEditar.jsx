@@ -52,7 +52,7 @@ const handleSave = async () => {
 
             if (user) {
                 const updateResponse = await fetch(`http://localhost:3000/users/${user.id}`, {
-                    method: 'PATCH', // Use PATCH to partially update
+                    method: 'PATCH', 
                     headers: {
                         'Content-Type': 'application/json',
                     },
@@ -64,7 +64,7 @@ const handleSave = async () => {
                 if (updateResponse.ok) {
                     console.log('Description saved:', description);
                     setIsSaved(true);
-                    setTimeout(() => setIsSaved(false), 3000); // Hide message after 3 seconds
+                    setTimeout(() => setIsSaved(false), 3000); 
                 } else {
                     setError('Failed to save data.');
                     console.error('Erro ao salvar os dados:', updateResponse.statusText);

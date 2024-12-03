@@ -99,7 +99,7 @@ export default function Freelances() {
         }
     };
 
-    {/* Consts de Estilização */ }
+    
 
     const iconProject = "size-[22vw] sm:size-[12vw] mr-[-6vw] px-[0.09rem]";
     const projectDesc = "flex flex-col gap-2 text-center justify-center items-center";

@@ -12,7 +12,7 @@ import MenuProjetos from "../components/MenuProjetos";
 export default function Profile() {
 const [open, setOpen] = useState(false);
 
-// Retrieve user ID from localStorage
+
 const userId = localStorage.getItem("userId");
 
 const handleLogoff = () => {
@@ -26,7 +26,7 @@ return (
     <MenuProjetos />
     <div className="flex flex-col lg:flex-row gap-6">
       <div className="lg:mt-[5.2vw] lg:ml-[3.8vw] mt-[12vw]">
-        {/* Pass userId as a prop to PerfilIconeEditar */}
+        
         <PerfilIconeEditar userId={userId} />
       </div>
       <div className="lg:ml-[15vw] lg:mt-[5vh] sm:mt-[18vh] p-12 flex flex-col gap-4">

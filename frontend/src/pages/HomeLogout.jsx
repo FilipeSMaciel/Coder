@@ -11,7 +11,7 @@ export default function HomeLogout() {
 
     const handleLogin = (username) => {
         localStorage.setItem("username", username);
-        setOpen(false); // Close the modal after successful login
+        setOpen(false); 
     };
 
     return (

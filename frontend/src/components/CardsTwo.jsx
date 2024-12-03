@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 export default function CardsTwo({ project }) {
-    const iconProject = "ml-[1.5vw] size-[8vw] mr-[7.5vw] hidden sm:block";
+    const iconProject = "ml-[1.5vw] w-[14vw] sm:w-[10vw] object-fit mr-[7.5vw] hidden sm:block";
 
     return (
         <div className="flex flex-row justify-center items-center h-[18.5vh] w-[77.5vw] sm:h-[32.5vh] sm:w-[55vw] bg-[#2C2C2C] border-[0.1vw] border-[#298C00] drop-shadow-3xl">
