@@ -6,13 +6,20 @@
       "password": "senha",
       "email": "admin@email.com",
       "description": "Eu sou o Admin.\nE controlo tudo."
+    },
+    {
+      "id": "4db2",
+      "username": "Pedro",
+      "password": "123",
+      "email": "pedro@email.com"
     }
   ],
   "projects": [
     {
       "id": "1",
       "users": [
-        "Admin"
+        "Admin",
+        "Pedro"
       ],
       "name": "Project Coder++",
       "image": "https://i.postimg.cc/MGDgSkGr/image.png",
@@ -23,7 +30,8 @@
     {
       "id": "2",
       "users": [
-        "Admin"
+        "Admin",
+        "Pedro"
       ],
       "name": "Coca-Cola Project",
       "image": "https://pngimg.com/uploads/cocacola_logo/cocacola_logo_PNG4.png",
@@ -34,7 +42,8 @@
     {
       "id": "3",
       "users": [
-        "Admin"
+        "Admin",
+        "Pedro"
       ],
       "name": "Google Plus",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Google_Plus_logo_%282015-2019%29.svg/640px-Google_Plus_logo_%282015-2019%29.svg.png",
