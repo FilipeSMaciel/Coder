@@ -24,7 +24,7 @@ export default function ProjectModal({ setOpen, onAddProject }) {
   };
 
   return (
-    <div className="p-1 sm:h-[85vh]">
+    <div className="p-1 sm:h-[82vh] bg- rounded-[1rem]">
 
       <h1 className="text-[7vw] sm:text-[2.4vw] text-center text-verde_principal font-bold mb-4">
         &lt; Adicionar Projeto /&gt;
@@ -85,7 +85,7 @@ export default function ProjectModal({ setOpen, onAddProject }) {
             type="submit"
             className="bg-verde_principal text-black  rounded-md px-4 py-2 hover:bg-blue-600"
           >
-            Adicionar Projeto
+            Adicionar 
           </button>
         </form>
         {imageUrl && (

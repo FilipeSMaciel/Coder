@@ -99,11 +99,11 @@ export default function Freelances() {
 
     {/* Consts de Estilização */ }
 
-    const iconProject = "size-[8vw] p-2 px-[0.09rem]";
+    const iconProject = "size-[22vw] sm:size-[12vw] mr-[-6vw] px-[0.09rem]";
     const projectDesc = "flex flex-col gap-2 text-center justify-center items-center";
     const filtrosBotton = "bg-[#1E1E1E] uppercase border-[2px] px-[1vw] border-black drop-shadow-x2l text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]";
     const candidatarButton = "w-full h-full flex items-center justify-center";
-    const verCandidatosButton = "bg-[#1E1E1E] uppercase border-[2px] px-[1vw] border-black drop-shadow-2xl text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]";
+    const verCandidatosButton = "hidden sm:block px-[1vw]  text-[3vw] text-verde_principal font-jetbrains tracking-widest text-nowrap underline sm:text-[1.1vw]";
 
     return (
         <div className="bg-background">
@@ -145,13 +145,10 @@ export default function Freelances() {
                     <h3 className="hidden sm:flex sm:text-[1.5vw] ml-[4vw] text-verde_botao">Com base nos projetos de mais destaque dessa semana</h3>
 
                     {filteredFreelances.map(freelance => (
-                        <div key={freelance.id} className="bg-bg_botao-login sm:w-[85vw] sm:h-[40vh] sm:m-auto flex justify-around items-center font-inter font-light border-[0.2vh] border[0.5vh] border-verde_botao py-6 drop-shadow-3xl">
+                        <div key={freelance.id} className="bg-bg_botao-login sm:w-[85vw] h-full sm:h-[40vh] sm:m-auto flex justify-around items-center font-inter font-light border-[0.2vh] border[0.5vh] border-verde_botao py-6 drop-shadow-3xl">
                             <img className={iconProject} src={freelance.image} alt={`${freelance.name} Logo`} />
                             <div className="flex flex-col items-center justify-center gap-5">
                                 <div className={projectDesc}>
-                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance.id)}>
-                                        Ver Candidatos
-                                    </button>
                                     <h4 className="text-[3vw] sm:text-[1.5vw] text-texto_header">{freelance.name}</h4>
                                     <p className="text-[2.5vw] sm:text-[1.2vw] m-auto w-[40vw] text-center text-texto_header">{freelance.description}</p>
                                     <p className="hidden sm:flex text-[2vw] sm:text-[1vw] m-auto mt-5 text-verde_botao">Requisitos: {freelance.requisites}</p>
@@ -162,9 +159,14 @@ export default function Freelances() {
                                     </button>
                                 </div>
                                 <a className="text-verde_principal underline text-[3vw] sm:hidden" href="#">Saiba Mais...</a>
+                                    <button className={verCandidatosButton} onClick={() => handleViewCandidates(freelance.id)}>
+                                        Ver Candidatos
+                                    </button>
                             </div>
                             <div className="flex gap-3 mt-[7vh] sm:w-[8vw] sm:flex-wrap justify-end">
+                               <button className={candidatarButton} onClick={() => handleApplyToProject(freelance.id)}>
                                 <img className="sm:size-5" src="./Group.svg" alt="Contador de devs icon" />
+                               </button>
                                 <p className="text-verde_principal font-extralight">{freelance.users ? freelance.users.length : 0}</p>
                                 <a className="hidden text-verde_principal underline text-[1vw] sm:block" href="#">Saiba Mais...</a>
                             </div>
