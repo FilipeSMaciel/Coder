@@ -27,7 +27,7 @@ export default function PesquisaProjects({ setOpenProject }) {
     "
                         />
                     </div>
-                    <div className="flex flex-row lg:gap-2 gap-4">
+                    <div className="flex flex-row lg:gap-2 gap-4 items-center">
                         <div className={filtrosBotton}>
                             <button>Filtros →</button>
                         </div>

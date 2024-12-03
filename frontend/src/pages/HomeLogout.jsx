@@ -26,8 +26,8 @@ export default function HomeLogout() {
                 onClose={() => setOpen(false)}
                 center
                 classNames={{
-                    overlay: 'customOverlay',
-                    modal: 'customModal'
+                    overlay: 'loginOverlay',
+                    modal: 'loginbgModal'
                 }}
                 className="drop-shadow-3xl"
             >

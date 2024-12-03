@@ -104,7 +104,7 @@ export default function Freelances() {
     const iconProject = "size-[22vw] sm:size-[12vw] mr-[-6vw] px-[0.09rem]";
     const projectDesc = "flex flex-col gap-2 text-center justify-center items-center";
     const filtrosBotton = "bg-[#1E1E1E] uppercase border-[2px] px-[1vw] border-black drop-shadow-x2l text-[4vw] text-verde_principal font-jetbrains tracking-widest text-nowrap sm:text-[1.3vw]";
-    const candidatarButton = "w-full h-full flex items-center justify-center";
+    const candidatarButton = "w-full h-full flex items-center justify-center text-[3vw]";
     const verCandidatosButton = "hidden sm:block px-[1vw]  text-[3vw] text-verde_principal font-jetbrains tracking-widest text-nowrap underline sm:text-[1.1vw]";
 
     return (

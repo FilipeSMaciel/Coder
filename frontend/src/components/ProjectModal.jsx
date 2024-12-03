@@ -24,7 +24,7 @@ export default function ProjectModal({ setOpen, onAddProject }) {
   };
 
   return (
-    <div className="p-1 sm:h-[82vh] bg- rounded-[1rem] bg-background">
+    <div className="p-1 sm:h-[82vh] bg- rounded-[1rem] bg-background md:h-full">
 
       <h1 className="text-[7vw] pt-8 sm:text-[2.4vw] text-center text-verde_principal font-bold mb-4">
         &lt; Adicionar Projeto /&gt;

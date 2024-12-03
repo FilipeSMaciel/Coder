@@ -4,14 +4,14 @@ export default function CardsTwo({ project }) {
     const iconProject = "ml-[1.5vw] w-[14vw] sm:w-[10vw] object-fit mr-[7.5vw] hidden sm:block";
 
     return (
-        <div className="flex flex-row justify-center items-center h-[18.5vh] w-[77.5vw] sm:h-[32.5vh] sm:w-[55vw] bg-[#2C2C2C] border-[0.1vw] border-[#298C00] drop-shadow-3xl">
+        <div className="flex flex-row justify-center items-center h-full w-[77.5vw] sm:h-[32.5vh] sm:w-[55vw] bg-[#2C2C2C] border-[0.1vw] border-[#298C00] drop-shadow-3xl">
             <section className="flex flex-row p-4 items-center">
                 <img src={project.image} alt={`Image of ${project.name}`} className={iconProject} />
-                <div className="flex flex-col gap-2 text-center justify-center items-center text-[#B3B3B3] font-inter my-auto">
-                    <div className='font-jetbrains sm:text-[1.5vw] text-[3.5vw]'>
+                <div className="flex flex-col gap-2 sm:gap-0 text-center justify-center items-center text-[#B3B3B3] font-inter my-auto">
+                    <div className='font-jetbrains sm:text-[1.5vw] text-[4vw]'>
                         <h1>{project.name}</h1>
                     </div>
-                    <div className="text-[1.8vw] sm:text-[1vw] w-[30vw]">
+                    <div className="text-[2.5vw] sm:text-[1vw] w-[45vw] sm:w-[30vw]">
                         <p>{project.description}</p>
                     </div>
                     <div className="flex flex-col sm:flex-row justify-center items-center mt-[3vw]">
