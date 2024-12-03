@@ -65,7 +65,7 @@ const handleSalvar = async () => {
                 if (updateResponse.ok) {
                     console.log('Texto salvo:', texto);
                     setSalvo(true);
-                    setTimeout(() => setSalvo(false), 3000); // Hide message after 3 seconds
+                    setTimeout(() => setSalvo(false), 3000); 
                 } else {
                     setError('Failed to save data.');
                     console.error('Erro ao salvar os dados:', updateResponse.statusText);

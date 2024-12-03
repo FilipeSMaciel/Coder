@@ -31,7 +31,7 @@ export default function LoginModal({ onLogin }) {
       const response = await fetch(API_URL);
       const users = await response.json();
 
-      // Verify if the user exists with the correct password
+      
       const user = users.find(
         (user) => user.username === data.username && user.password === data.password
       );
@@ -41,10 +41,10 @@ export default function LoginModal({ onLogin }) {
         localStorage.setItem("username", data.username);
         setIsLoggedIn(true);
         onLogin(data.username);
-        navigate("/home"); // Redirect to the home page or another logged-in page
+        navigate("/home"); 
       } else {
         setErrorMessage("Usuário ou senha inválidos.");
-        navigate("/"); // Redirect to HomeLogout if login fails
+        navigate("/"); 
       }
     } catch (error) {
       console.log(error);
@@ -94,7 +94,7 @@ export default function LoginModal({ onLogin }) {
   return (
     <section className="flex items-center justify-center w-[75vw] sm:w-[60vw] h-[70vh] sm:h-[70vh]">
       <div className="relative w-full h-full overflow-hidden flex justify-center items-center m-auto">
-        {/* Imagem animada */}
+        
         <img
           src="./telaLogin2.jpg"
           alt="Imagem abstrata da tela de Login"
@@ -102,7 +102,7 @@ export default function LoginModal({ onLogin }) {
             }`}
         />
 
-        {/* Seção do conteúdo animado */}
+       
         <div
           className={`absolute w-1/2 flex flex-col items-center transition-transform duration-1000 ease-in-out ${isRegistering ? "translate-x-[50%]" : "translate-x-[-50%]"
             }`}
